@@ -81,23 +81,23 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-[#05070c] transition-colors duration-300">
       {/* <Navigation /> */}
       
-      <main className="flex-grow flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-gray-50 via-white to-green-50">
+      <main className="flex-grow flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-gray-50 via-white to-green-50 dark:from-[#05070c] dark:via-[#090d16] dark:to-black transition-colors duration-300">
         <div className="w-full max-w-6xl">
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
 
             {/* Left Side - Form Section */}
             <div className="order-1 w-full max-w-md mx-auto md:mx-0">
-              <div className="bg-white rounded-2xl shadow-2xl p-5 sm:p-8 md:p-10 space-y-5 sm:space-y-6">
+              <div className="bg-white dark:bg-white/5 dark:backdrop-blur-xl dark:border dark:border-white/10 rounded-2xl shadow-2xl p-5 sm:p-8 md:p-10 space-y-5 sm:space-y-6 transition-colors duration-300">
                 
                 {/* Header */}
                 <div className="text-center space-y-1.5 sm:space-y-2">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-600 to-green-800 dark:from-emerald-400 dark:to-green-600 bg-clip-text text-transparent">
                     Register
                   </h1>
-                  <p className="text-gray-600 text-xs sm:text-sm">Create your account to get started</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">Create your account to get started</p>
                 </div>
 
                 {/* Success Message */}
@@ -125,62 +125,62 @@ export default function RegisterPage() {
                   
                   {/* Full Name Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">Full Name</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">Full Name</label>
                     <input
                       type="text"
                       name="username"
                       value={formData.username}
                       onChange={handleInputChange}
                       placeholder="Enter your full name"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400"
                       required
                     />
                   </div>
 
                   {/* Email Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">Email Address</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">Email Address</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="Enter your email"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400"
                       required
                     />
                   </div>
 
                   {/* NIC Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">National ID (NIC)</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">National ID (NIC)</label>
                     <input
                       type="text"
                       name="nic"
                       value={formData.nic}
                       onChange={handleInputChange}
                       placeholder="Enter your NIC number"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400"
                       required
                     />
                   </div>
 
                   {/* Address Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">Address</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">Address</label>
                     <textarea
                       name="address"
                       value={formData.address}
                       onChange={handleInputChange}
                       placeholder="Enter your address"
                       rows="2"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 resize-none"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400 resize-none"
                     />
                   </div>
 
                   {/* Password Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">Password</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">Password</label>
                     <div className="relative">
                       <input
                         type={showPassword ? 'text' : 'password'}
@@ -189,13 +189,13 @@ export default function RegisterPage() {
                         onChange={handleInputChange}
                         placeholder="Create a strong password"
                         style={{ fontSize: '16px' }}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
                       >
                         {showPassword ? (
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -213,7 +213,7 @@ export default function RegisterPage() {
 
                   {/* Confirm Password Field */}
                   <div className="space-y-1 sm:space-y-1.5">
-                    <label className="block text-xs font-semibold text-gray-700">Confirm Password</label>
+                    <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300">Confirm Password</label>
                     <div className="relative">
                       <input
                         type={showConfirmPassword ? 'text' : 'password'}
@@ -222,13 +222,13 @@ export default function RegisterPage() {
                         onChange={handleInputChange}
                         placeholder="Confirm your password"
                         style={{ fontSize: '16px' }}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all hover:border-gray-400 dark:hover:border-white/20 text-gray-900 dark:text-white placeholder-gray-400"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
                       >
                         {showConfirmPassword ? (
                           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -245,7 +245,7 @@ export default function RegisterPage() {
                   </div>
 
                   {/* Terms */}
-                  <p className="text-xs text-gray-500 text-center pt-1">
+                  <p className="text-xs text-gray-500 dark:text-gray-400 text-center pt-1">
                     By registering, you agree to our Terms of Service and Privacy Policy
                   </p>
 
@@ -253,7 +253,7 @@ export default function RegisterPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 disabled:opacity-50 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 transform hover:-translate-y-0.5 mt-3 sm:mt-4 text-sm sm:text-base"
+                    className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 disabled:opacity-50 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/20 active:scale-95 transform hover:-translate-y-0.5 mt-3 sm:mt-4 text-sm sm:text-base border border-green-500/20"
                   >
                     {loading ? (
                       <span className="flex items-center justify-center gap-2">
@@ -271,9 +271,9 @@ export default function RegisterPage() {
 
                 {/* Sign In Link */}
                 <div className="text-center pt-1">
-                  <p className="text-gray-600 text-xs sm:text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                     Already have an account?{' '}
-                    <Link href="/auth/login" className="text-green-600 hover:text-green-700 font-semibold transition-colors">
+                    <Link href="/auth/login" className="text-green-600 hover:text-green-700 dark:text-emerald-400 dark:hover:text-green-300 font-semibold transition-colors">
                       Sign in here
                     </Link>
                   </p>
@@ -301,10 +301,10 @@ export default function RegisterPage() {
       </main>
       
       {/* Back to Home Navigation */}
-      <section className="bg-gradient-to-r from-green-50 to-green-100 border-t border-green-300 py-6 sm:py-8 px-3 sm:px-4 md:px-6">
+      <section className="bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-900 dark:to-[#090d16] border-t border-green-300 dark:border-white/10 py-6 sm:py-8 px-3 sm:px-4 md:px-6 transition-colors duration-300">
         <div className="max-w-7xl mx-auto flex justify-center md:justify-start">
           <Link href="/">
-            <button className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-3.5 sm:py-4 bg-gradient-to-r from-green-600 via-green-600 to-green-700 hover:from-green-700 hover:via-green-700 hover:to-green-800 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:scale-110 transition-all duration-300 text-sm sm:text-base md:text-lg whitespace-nowrap active:scale-95 overflow-hidden">
+            <button className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-12 py-3.5 sm:py-4 bg-gradient-to-r from-green-600 via-green-600 to-green-700 hover:from-green-700 hover:via-green-700 hover:to-green-800 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 transition-all duration-300 text-sm sm:text-base md:text-lg whitespace-nowrap active:scale-95 overflow-hidden border border-green-400/20">
               {/* Glow effect */}
               <span className="absolute inset-0 bg-green-400 opacity-0 group-hover:opacity-30 rounded-xl transition-opacity duration-300 blur"></span>
               
