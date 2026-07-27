@@ -20,14 +20,19 @@ export const metadata = {
   },
 };
 
+import ThemeProvider from "./components/ThemeProvider";
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#07090e] text-gray-900 dark:text-gray-100 transition-colors duration-300`}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
 }
+
