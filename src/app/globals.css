@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scroll Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleInUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll Animation Classes */
+.scroll-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-fade-in-left {
+  animation: fadeInLeft 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-fade-in-right {
+  animation: fadeInRight 0.7s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-scale-in-up {
+  animation: scaleInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger Animation for multiple elements */
+.scroll-stagger > * {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.scroll-stagger > :nth-child(1) { animation-delay: 0.1s; }
+.scroll-stagger > :nth-child(2) { animation-delay: 0.2s; }
+.scroll-stagger > :nth-child(3) { animation-delay: 0.3s; }
+.scroll-stagger > :nth-child(4) { animation-delay: 0.4s; }
+.scroll-stagger > :nth-child(5) { animation-delay: 0.5s; }
+.scroll-stagger > :nth-child(n+6) { animation-delay: 0.6s; }

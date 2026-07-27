@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="250" fill="#0066FF" opacity="0.1"/>
+  
+  <!-- Speech Bubble (Complaint Symbol) -->
+  <path d="M 120 140 Q 120 120 140 120 L 340 120 Q 360 120 360 140 L 360 260 Q 360 280 340 280 L 180 280 L 140 320 Q 130 330 120 320 L 120 280 Q 100 280 100 260 L 100 140" 
+        fill="#0066FF" stroke="#0066FF" stroke-width="2"/>
+  
+  <!-- Checkmark (Resolution Symbol) -->
+  <path d="M 200 220 L 240 260 L 300 180" 
+        stroke="white" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Accent Circle -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#00CC88" stroke-width="3" opacity="0.5"/>
+</svg>
