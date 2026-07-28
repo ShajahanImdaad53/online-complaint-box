@@ -59,9 +59,9 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         id="home"
-        className="bg-cover bg-center bg-no-repeat text-white py-20 sm:py-28 md:py-36 lg:py-44 px-3 sm:px-4 md:px-6 relative min-h-[90vh] flex items-center overflow-hidden"
+        className="bg-cover bg-center bg-no-repeat text-white py-14 sm:py-20 md:py-28 lg:py-36 px-4 sm:px-6 relative min-h-[85vh] flex items-center overflow-hidden"
         style={{
-          backgroundImage: 'linear-gradient(135deg, rgba(7, 9, 14, 0.75) 0%, rgba(13, 17, 24, 0.85) 100%), url("/images/home.jpeg")',
+          backgroundImage: 'linear-gradient(135deg, rgba(7, 9, 14, 0.85) 0%, rgba(13, 17, 24, 0.92) 100%), url("/images/home.jpeg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -72,247 +72,246 @@ export default function Home() {
         <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10 w-full">
-          <div className="flex items-center justify-center">
-            {/* Center Content */}
-            <div className="text-white text-center max-w-4xl">
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full mb-6 sm:mb-8 border border-white/20 shadow-lg animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            
+            {/* Left Column - Text Content */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20 shadow-lg animate-slide-in-left">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <p className="text-xs sm:text-sm font-bold tracking-wide uppercase text-blue-200">Welcome to Pradesha Shaba • Addalachenai</p>
+                <p className="text-xs sm:text-sm font-bold tracking-wide uppercase text-blue-200">Official Municipal Portal • Addalachenai</p>
               </div>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 sm:mb-8 leading-tight tracking-tight animate-fade-in-down drop-shadow-md" style={{ animationDelay: '0.2s' }}>
-                Your Voice <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">Matters</span>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-5 sm:mb-6 leading-tight tracking-tight drop-shadow-md">
+                Your Voice <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">Matters Here</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 sm:mb-12 leading-relaxed font-normal max-w-3xl mx-auto animate-fade-in-down drop-shadow" style={{ animationDelay: '0.3s' }}>
-                Report issues affecting your community and track their resolution in real-time. We are committed to transparent service delivery, digital governance, and citizen satisfaction.
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-10 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 drop-shadow">
+                Report civic issues affecting your neighborhood and track their resolution in real-time. Experience transparent service delivery and digital governance designed for our community.
               </p>
               
               {!isAuthenticated ? (
-                <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-down w-full sm:w-auto" style={{ animationDelay: '0.4s' }}>
+                <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto">
                   <Link
                     href="/complaint/create"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-8 py-4 rounded-2xl font-black transition-all duration-300 shadow-xl hover:shadow-blue-500/30 text-center transform hover:-translate-y-1 active:scale-95 text-base sm:text-lg flex items-center justify-center gap-2 group"
+                    className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 text-sm sm:text-base border border-blue-400/30"
                   >
                     <span>File a Complaint</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </Link>
                   <Link
                     href="/auth/register"
-                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 text-center transform hover:-translate-y-1 active:scale-95 text-base sm:text-lg shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base shadow-lg"
                   >
-                    Register Account
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span>Register Account</span>
                   </Link>
                 </div>
               ) : (
-                <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-down w-full sm:w-auto" style={{ animationDelay: '0.4s' }}>
+                <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center lg:justify-start w-full sm:w-auto">
                   <Link
                     href="/complaint/create"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-8 py-4 rounded-2xl font-black transition-all duration-300 shadow-xl hover:shadow-blue-500/30 text-center transform hover:-translate-y-1 active:scale-95 text-base sm:text-lg flex items-center justify-center gap-2 group"
+                    className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 text-sm sm:text-base border border-blue-400/30"
                   >
                     <span>File a Complaint</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </Link>
                   <Link
                     href="/complaint"
-                    className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 text-center transform hover:-translate-y-1 active:scale-95 text-base sm:text-lg shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base shadow-lg"
                   >
-                    View My Complaints
+                    <span>View My Complaints</span>
                   </Link>
                 </div>
               )}
             </div>
+
+            {/* Right Column - Premium Municipal Visual Showcase */}
+            <div className="lg:col-span-5 flex justify-center mt-6 lg:mt-0">
+              <div className="relative w-full max-w-md lg:max-w-none bg-white/10 dark:bg-black/40 backdrop-blur-2xl rounded-3xl p-4 sm:p-5 border border-white/20 shadow-2xl group hover:border-cyan-400/50 transition-all duration-500">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-inner mb-4 bg-gray-900">
+                  <img
+                    src="/images/municipality_hero.jpg"
+                    alt="Addalachenai Municipal Administration"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                    <div className="text-left">
+                      <span className="px-2.5 py-1 bg-blue-600/90 text-white text-[10px] font-bold rounded-full uppercase tracking-wider mb-1 inline-block shadow">Active Governance</span>
+                      <h3 className="text-white font-bold text-sm sm:text-base leading-snug">Pradeshiya Sabha Administration</h3>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Stats bar */}
+                <div className="grid grid-cols-3 gap-2 text-center pt-2 border-t border-white/10">
+                  <div className="p-2 rounded-xl bg-white/5">
+                    <p className="text-cyan-400 font-black text-sm sm:text-base">100%</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Digital</p>
+                  </div>
+                  <div className="p-2 rounded-xl bg-white/5">
+                    <p className="text-emerald-400 font-black text-sm sm:text-base">24/7</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Support</p>
+                  </div>
+                  <div className="p-2 rounded-xl bg-white/5">
+                    <p className="text-purple-400 font-black text-sm sm:text-base">Fast</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Resolution</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* About Us - Vision & Mission Section */}
-      <section id="about" className="py-16 sm:py-20 md:py-28 lg:py-36 px-3 sm:px-4 md:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
-        {/* Background Glowing Blobs for Night Mode */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-10 w-80 h-80 bg-emerald-500/10 dark:bg-emerald-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '4s' }}></div>
+      {/* About Us - Vision, Mission & Core Values Section */}
+      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in-down">
-            <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-4 py-2 bg-blue-50 dark:bg-blue-950/60 border border-blue-200/60 dark:border-blue-800/60 rounded-full shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
-              <span className="text-blue-700 dark:text-blue-300 font-bold text-xs sm:text-sm tracking-wider uppercase">WHO WE ARE</span>
+          <div className="text-center mb-8 sm:mb-12 animate-fade-in-down">
+            <div className="inline-flex items-center gap-2 mb-2 px-3.5 py-1 bg-blue-50 dark:bg-blue-950/60 border border-blue-200/60 dark:border-blue-800/60 rounded-full shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
+              <span className="text-blue-700 dark:text-blue-300 font-bold text-[11px] tracking-wider uppercase">WHO WE ARE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2 leading-tight tracking-tight">
               Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Vision & Mission</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-              Committed to transforming our community through transparent governance, digital innovation, and active citizen engagement for sustainable development.
+            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-medium">
+              Dedicated to transparent governance, digital innovation, and community empowerment.
             </p>
           </div>
 
-          {/* Vision & Mission Bento Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mb-16 sm:mb-20 md:mb-24">
-            {/* Vision Card (Col Span 6) */}
-            <div className="col-span-1 lg:col-span-6 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl p-8 sm:p-10 md:p-12 border border-gray-200/80 dark:border-blue-500/25 hover:border-blue-500/50 dark:hover:border-blue-400/60 shadow-xl dark:shadow-blue-500/5 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute -right-20 -top-20 w-60 h-60 bg-gradient-to-br from-blue-500/15 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+          {/* Compact Vision & Mission Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10 sm:mb-14">
+            {/* Vision Card */}
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-blue-500/25 hover:border-blue-500/50 shadow-lg dark:shadow-blue-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
               
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  {/* Icon */}
-                  <div className="w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-blue-500/30 text-white">
-                    <svg className="w-7 sm:w-8 h-7 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3.5 mb-4">
+                  <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                   </div>
-                  <span className="px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 font-bold text-xs tracking-wider uppercase border border-blue-200 dark:border-blue-800/60 shadow-sm">
-                    FUTURE VISION
-                  </span>
+                  <div>
+                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">FUTURE OUTLOOK</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Vision</h3>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Our Vision
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg font-normal mb-8">
-                  To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life. We envision a future driven by participation and sustainability.
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
+                  To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life.
                 </p>
               </div>
 
-              {/* Highlight Points */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-gray-100 dark:border-gray-800/80">
-                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-blue-50/50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40">
-                  <span className="w-6 h-6 rounded-lg bg-blue-500 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
-                  <span className="text-gray-800 dark:text-gray-200 text-sm font-semibold">Sustainable Growth</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-blue-50/50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40">
-                  <span className="w-6 h-6 rounded-lg bg-blue-500 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
-                  <span className="text-gray-800 dark:text-gray-200 text-sm font-semibold">Citizen Empowerment</span>
-                </div>
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-blue-500 font-bold">✓</span> Sustainable Growth
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-blue-500 font-bold">✓</span> Citizen First
+                </span>
               </div>
             </div>
 
-            {/* Mission Card (Col Span 6) */}
-            <div className="col-span-1 lg:col-span-6 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl p-8 sm:p-10 md:p-12 border border-gray-200/80 dark:border-emerald-500/25 hover:border-emerald-500/50 dark:hover:border-emerald-400/60 shadow-xl dark:shadow-emerald-500/5 hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute -right-20 -top-20 w-60 h-60 bg-gradient-to-br from-emerald-500/15 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+            {/* Mission Card */}
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-emerald-500/25 hover:border-emerald-500/50 shadow-lg dark:shadow-emerald-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
               
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  {/* Icon */}
-                  <div className="w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-emerald-500 to-green-600 dark:from-emerald-600 dark:to-teal-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:-rotate-6 transition-all duration-300 shadow-lg shadow-emerald-500/30 text-white">
-                    <svg className="w-7 sm:w-8 h-7 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3.5 mb-4">
+                  <div className="w-11 h-11 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <span className="px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 font-bold text-xs tracking-wider uppercase border border-emerald-200 dark:border-emerald-800/60 shadow-sm">
-                    OUR MISSION
-                  </span>
+                  <div>
+                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">PURPOSE & ACTION</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Mission</h3>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 tracking-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                  Our Mission
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg font-normal mb-8">
-                  To deliver prompt, reliable, and transparent municipal services while safeguarding our local environment. We dedicate ourselves to resolving citizen grievances swiftly through cutting-edge digital tracking and continuous public feedback.
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
+                  To deliver prompt, reliable municipal services while safeguarding our environment. We resolve grievances swiftly through real-time digital tracking and active public participation.
                 </p>
               </div>
 
-              {/* Highlight Points */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-gray-100 dark:border-gray-800/80">
-                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
-                  <span className="w-6 h-6 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
-                  <span className="text-gray-800 dark:text-gray-200 text-sm font-semibold">Swift Resolution</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-3 rounded-xl bg-emerald-50/50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
-                  <span className="w-6 h-6 rounded-lg bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0">✓</span>
-                  <span className="text-gray-800 dark:text-gray-200 text-sm font-semibold">Eco-Protection</span>
-                </div>
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-emerald-500 font-bold">✓</span> Swift Resolution
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-emerald-500 font-bold">✓</span> Eco-Protection
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Core Values Bento Section */}
-          <div className="mt-8 sm:mt-12 md:mt-16">
-            <div className="text-center mb-10 sm:mb-14 animate-fade-in-down" style={{ animationDelay: '0.3s' }}>
-              <span className="text-purple-600 dark:text-purple-400 font-bold text-xs sm:text-sm uppercase tracking-widest block mb-2">FOUNDATIONAL GUIDING PRINCIPLES</span>
-              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-3 sm:mb-4 tracking-tight">
-                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 dark:from-purple-400 dark:via-pink-400 dark:to-red-400">Core Values</span>
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-medium">The non-negotiable pillars that govern every initiative, resolution, and public interaction in Pradesha Shaba.</p>
+          {/* Compact Core Values Section */}
+          <div>
+            <div className="text-center mb-6 sm:mb-8">
+              <span className="text-purple-600 dark:text-purple-400 font-bold text-[11px] uppercase tracking-widest block mb-1">GUIDING PRINCIPLES</span>
+              <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">Our Core Values</h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
               {[
                 { 
                   title: 'Transparency', 
-                  desc: 'Complete openness in decision making, budget allocation, and public service reporting.',
+                  desc: 'Complete openness in decision making and public service reporting.',
                   icon: (
-                    <svg className="w-6 sm:w-7 h-6 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
-                  gradient: 'from-blue-500 to-blue-600 dark:from-blue-600 dark:to-cyan-600',
-                  badge: 'Open Governance',
-                  badgeColor: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800'
+                  gradient: 'from-blue-500 to-indigo-600'
                 },
                 { 
                   title: 'Accountability', 
-                  desc: 'Taking total responsibility for community outcomes and ensuring timely resolution of issues.',
+                  desc: 'Taking total responsibility for timely resolutions and community outcomes.',
                   icon: (
-                    <svg className="w-6 sm:w-7 h-6 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ),
-                  gradient: 'from-emerald-500 to-emerald-600 dark:from-emerald-600 dark:to-green-600',
-                  badge: 'Reliability',
-                  badgeColor: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
+                  gradient: 'from-emerald-500 to-green-600'
                 },
                 { 
                   title: 'Participation', 
-                  desc: 'Empowering every resident to voice concerns, report grievances, and co-create solutions.',
+                  desc: 'Empowering residents to voice concerns and co-create local solutions.',
                   icon: (
-                    <svg className="w-6 sm:w-7 h-6 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 10H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ),
-                  gradient: 'from-purple-500 to-purple-600 dark:from-purple-600 dark:to-pink-600',
-                  badge: 'Community First',
-                  badgeColor: 'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800'
+                  gradient: 'from-purple-500 to-pink-600'
                 },
                 { 
                   title: 'Innovation', 
-                  desc: 'Adopting state-of-the-art digital tools to streamline complaints and public administration.',
+                  desc: 'Adopting state-of-the-art digital tools to streamline municipal services.',
                   icon: (
-                    <svg className="w-6 sm:w-7 h-6 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   ),
-                  gradient: 'from-amber-500 to-orange-600 dark:from-amber-600 dark:to-orange-600',
-                  badge: 'Digital Era',
-                  badgeColor: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800'
+                  gradient: 'from-amber-500 to-orange-600'
                 }
               ].map((value, idx) => (
                 <div 
                   key={idx} 
-                  className="group relative bg-white/90 dark:bg-gray-900/70 backdrop-blur-md rounded-2xl p-6 sm:p-7 md:p-8 border border-gray-200/80 dark:border-gray-800/80 hover:border-purple-500/50 dark:hover:border-purple-400/60 shadow-lg dark:shadow-gray-950/50 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col justify-between"
-                  style={{ animationDelay: `${0.4 + idx * 0.1}s` }}
+                  className="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md rounded-xl p-5 border border-gray-200/80 dark:border-gray-800 hover:border-purple-500/40 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    {/* Header with Icon and Badge */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`w-12 sm:w-14 h-12 sm:h-14 bg-gradient-to-br ${value.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 shadow-md`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-9 h-9 bg-gradient-to-br ${value.gradient} rounded-lg flex items-center justify-center shadow-sm shrink-0`}>
                         {value.icon}
                       </div>
-                      <span className={`px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wide uppercase border ${value.badgeColor}`}>
-                        {value.badge}
-                      </span>
+                      <h4 className="font-bold text-gray-900 dark:text-white text-base leading-tight">{value.title}</h4>
                     </div>
-                    
-                    {/* Content */}
-                    <h4 className="font-black text-gray-900 dark:text-white mb-3 text-lg sm:text-xl tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{value.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed font-normal">{value.desc}</p>
-                  </div>
-                  
-                  {/* Subtle Footer Arrow */}
-                  <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800/80 flex items-center justify-end">
-                    <span className="text-xs font-bold text-gray-400 dark:text-gray-500 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-1">
-                      Learn more <span className="text-base leading-none">→</span>
-                    </span>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{value.desc}</p>
                   </div>
                 </div>
               ))}
@@ -472,95 +471,64 @@ export default function Home() {
           </div>
 
           {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-6 relative mb-16 sm:mb-20">
-            {/* Connection Lines */}
-            <div className="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-blue-500/40 via-green-500/40 via-yellow-500/40 to-purple-500/40 dark:from-blue-400/20 dark:via-green-400/20 dark:via-yellow-400/20 dark:to-purple-400/20 rounded-full z-0"></div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 relative mb-16 sm:mb-20">
             {/* Step 1 */}
-            <div className="relative text-center group animate-fade-in-up z-10" style={{ animationDelay: '0.1s' }}>
-              <div className="flex flex-col h-full bg-gray-50/50 dark:bg-gray-900/40 backdrop-blur-md p-6 rounded-3xl border border-gray-100 dark:border-gray-800/80 hover:border-blue-500/40 transition-all duration-300">
-                <div className="relative inline-flex items-center justify-center mx-auto mb-6">
-                  <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-br from-blue-500 to-blue-700 text-white w-16 sm:w-18 md:w-20 h-16 sm:h-18 md:h-20 rounded-2xl flex items-center justify-center font-black text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-blue-500/20 border border-white/20">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                    </svg>
-                  </div>
+            <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
+                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-blue-500/20">
+                  <img src="/images/step_account.jpg" alt="Create Account" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-2 right-2 px-2.5 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 01</div>
                 </div>
                 
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg sm:text-xl">Create Account</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Create Account</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Register in seconds using your email or phone number to access the portal securely.
+                  Register in seconds using your email or phone number to access the citizen portal securely.
                 </p>
-                <div className="mt-6">
-                  <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-200 dark:border-blue-500/20">Step 01</span>
-                </div>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="relative text-center group animate-fade-in-up z-10" style={{ animationDelay: '0.2s' }}>
-              <div className="flex flex-col h-full bg-gray-50/50 dark:bg-gray-900/40 backdrop-blur-md p-6 rounded-3xl border border-gray-100 dark:border-gray-800/80 hover:border-green-500/40 transition-all duration-300">
-                <div className="relative inline-flex items-center justify-center mx-auto mb-6">
-                  <div className="absolute inset-0 bg-green-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-br from-green-500 to-emerald-700 text-white w-16 sm:w-18 md:w-20 h-16 sm:h-18 md:h-20 rounded-2xl flex items-center justify-center font-black text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-green-500/20 border border-white/20">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
+            <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
+                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-emerald-500/20">
+                  <img src="/images/step_complaint.jpg" alt="File Complaint" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-2 right-2 px-2.5 py-1 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 02</div>
                 </div>
 
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg sm:text-xl">File Complaint</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">File Complaint</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
                   Submit your detailed complaint with photos, description, and exact location markers.
                 </p>
-                <div className="mt-6">
-                  <span className="inline-block px-3 py-1 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded-full text-xs font-bold border border-green-200 dark:border-green-500/20">Step 02</span>
-                </div>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="relative text-center group animate-fade-in-up z-10" style={{ animationDelay: '0.3s' }}>
-              <div className="flex flex-col h-full bg-gray-50/50 dark:bg-gray-900/40 backdrop-blur-md p-6 rounded-3xl border border-gray-100 dark:border-gray-800/80 hover:border-yellow-500/40 transition-all duration-300">
-                <div className="relative inline-flex items-center justify-center mx-auto mb-6">
-                  <div className="absolute inset-0 bg-yellow-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-br from-amber-500 to-yellow-600 text-white w-16 sm:w-18 md:w-20 h-16 sm:h-18 md:h-20 rounded-2xl flex items-center justify-center font-black text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-yellow-500/20 border border-white/20">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
+            <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
+                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-amber-500/20">
+                  <img src="/images/step_track.jpg" alt="Track Progress" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-2 right-2 px-2.5 py-1 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 03</div>
                 </div>
 
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg sm:text-xl">Track Progress</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Track Progress</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Monitor live status updates, staff assignments, and receive SMS/email alerts.
+                  Monitor live status updates, staff assignments, and receive instant progress notifications.
                 </p>
-                <div className="mt-6">
-                  <span className="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 rounded-full text-xs font-bold border border-yellow-200 dark:border-yellow-500/20">Step 03</span>
-                </div>
               </div>
             </div>
 
             {/* Step 4 */}
-            <div className="relative text-center group animate-fade-in-up z-10" style={{ animationDelay: '0.4s' }}>
-              <div className="flex flex-col h-full bg-gray-50/50 dark:bg-gray-900/40 backdrop-blur-md p-6 rounded-3xl border border-gray-100 dark:border-gray-800/80 hover:border-purple-500/40 transition-all duration-300">
-                <div className="relative inline-flex items-center justify-center mx-auto mb-6">
-                  <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative bg-gradient-to-br from-purple-500 to-indigo-700 text-white w-16 sm:w-18 md:w-20 h-16 sm:h-18 md:h-20 rounded-2xl flex items-center justify-center font-black text-2xl sm:text-3xl group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-purple-500/20 border border-white/20">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
+            <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-purple-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
+                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-purple-500/20">
+                  <img src="/images/step_resolution.jpg" alt="Get Resolution" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-2 right-2 px-2.5 py-1 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 04</div>
                 </div>
 
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg sm:text-xl">Get Resolution</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Get Resolution</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Receive confirmation, resolution report, and provide feedback once completed.
+                  Receive resolution confirmation report, verify community improvements, and provide feedback.
                 </p>
-                <div className="mt-6">
-                  <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded-full text-xs font-bold border border-purple-200 dark:border-purple-500/20">Step 04</span>
-                </div>
               </div>
             </div>
           </div>

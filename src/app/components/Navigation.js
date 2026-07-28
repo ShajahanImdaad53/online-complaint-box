@@ -153,34 +153,32 @@ export default function Navigation() {
             )}
 
             {!isUser ? (
-              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
                 <Link
                   href="/auth/login"
-                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold rounded-xl transition-all duration-300 shadow-md hover:shadow-blue-500/25 active:scale-95 text-xs sm:text-sm md:text-base flex items-center gap-1.5"
+                  className="group relative inline-flex items-center gap-1.5 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 text-xs sm:text-sm md:text-sm overflow-hidden border border-blue-400/30"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                  <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
+                  <svg className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                   </svg>
-                  <span className="hidden sm:inline">Sign in</span>
-                  <span className="sm:hidden">In</span>
+                  <span className="tracking-wide">Sign In</span>
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="hidden md:flex items-center gap-1.5 px-6 py-2.5 border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/40 font-bold rounded-xl transition-all duration-300 text-sm"
+                  className="hidden sm:inline-flex group relative items-center gap-1.5 px-5 sm:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95"
                 >
-                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                  </svg>
-                  Register
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="tracking-wide">Register</span>
                 </Link>
               </div>
             ) : (
               <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
                 <Link
                   href={userRole === 'admin' ? '/admin' : '/account'}
-                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-xl transition-all duration-300 text-xs sm:text-sm md:text-base flex items-center gap-1.5 shadow-md hover:shadow-green-500/25"
+                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm flex items-center gap-1.5 shadow-md hover:shadow-green-500/30 hover:scale-105"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   <span className="hidden sm:inline">{userRole === 'admin' ? 'Dashboard' : 'Profile'}</span>
@@ -189,9 +187,9 @@ export default function Navigation() {
                 <button
                   onClick={handleLogout}
                   disabled={isLoggingOut}
-                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-xl transition-all duration-300 text-xs sm:text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/25"
+                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/30 hover:scale-105"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                   </svg>
                   <span className="hidden sm:inline">{isLoggingOut ? 'Logging out...' : 'Logout'}</span>
@@ -214,23 +212,31 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="lg:hidden mt-3 sm:mt-3 py-3 sm:py-4 border-t border-gray-200 dark:border-gray-800">
+          <nav className="lg:hidden mt-3 sm:mt-3 py-3 sm:py-4 border-t border-gray-200 dark:border-gray-800 space-y-2">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-center px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-xl transition-all duration-300 transform hover:scale-105"
+                className="block w-full text-center px-3 sm:px-4 py-3 text-base font-semibold text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-xl transition-all duration-300"
               >
                 {item.name}
               </button>
             ))}
             {!isUser && (
-              <Link
-                href="/auth/register"
-                className="block w-full text-center px-3 sm:px-4 py-3 sm:py-4 text-base sm:text-lg font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 hover:bg-blue-100 dark:hover:bg-blue-900/50 rounded-xl transition-all duration-300 transform hover:scale-105 mt-2"
-              >
-                Register
-              </Link>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                <Link
+                  href="/auth/login"
+                  className="w-full text-center py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/register"
+                  className="w-full text-center py-3 text-sm font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-xl shadow-sm"
+                >
+                  Register
+                </Link>
+              </div>
             )}
           </nav>
         )}
