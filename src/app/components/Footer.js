@@ -55,7 +55,7 @@ export default function Footer() {
           <div className="md:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-blue-500/30 pb-1.5 w-fit">Navigation</h4>
             <ul className="space-y-2.5 w-full">
-              {['home', 'about', 'services', 'complaint', 'contact'].map((section, idx) => (
+              {['home', 'services', 'complaint', 'about', 'contact'].map((section, idx) => (
                 <li key={idx}>
                   <button
                     onClick={() => scrollToSection(section)}

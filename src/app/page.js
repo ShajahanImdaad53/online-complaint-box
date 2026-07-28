@@ -162,206 +162,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Us - Vision, Mission & Core Values Section */}
-      <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
-        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
-            <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
-              <span className="text-blue-700 dark:text-blue-300 font-extrabold text-xs tracking-wider uppercase">WHO WE ARE</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Pradeshiya Sabha</span>
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-              Dedicated to transparent governance, digital civic innovation, and community empowerment across Addalachenai.
-            </p>
-          </div>
-
-          {/* New Digital Authority Showcase Bento Card with Image */}
-          <div className="bg-gradient-to-br from-gray-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 md:p-10 border border-indigo-500/30 shadow-2xl mb-10 sm:mb-14 text-white relative overflow-hidden group">
-            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center relative z-10">
-              {/* Left Column: Image Showcase */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black">
-                  <img src="/images/about_civic.jpg" alt="Civic Collaboration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wide">🏛️ Addalachenai Administration</span>
-                    <span className="text-xs font-semibold text-gray-200">Digital Era</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Council Overview */}
-              <div className="lg:col-span-6 space-y-5 text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-                  <span>⚡ Citizen-Centric Leadership</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-black leading-tight tracking-tight text-white">
-                  Empowering Addalachenai Through Next-Gen Digital Governance
-                </h3>
-                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
-                  The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity.
-                </p>
-                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-white/10">
-                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
-                    <div className="text-xl font-black text-cyan-400 mb-0.5">100%</div>
-                    <div className="text-xs text-gray-300 font-medium">Digital Accountability</div>
-                  </div>
-                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
-                    <div className="text-xl font-black text-emerald-400 mb-0.5">Rapid</div>
-                    <div className="text-xs text-gray-300 font-medium">Grievance Resolution</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Compact Vision & Mission Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10 sm:mb-14">
-            {/* Vision Card */}
-            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-blue-500/25 hover:border-blue-500/50 shadow-lg dark:shadow-blue-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
-              
-              <div>
-                <div className="flex items-center gap-3.5 mb-4">
-                  <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">FUTURE OUTLOOK</span>
-                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Vision</h3>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
-                  To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
-                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-blue-500 font-bold">✓</span> Sustainable Growth
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-blue-500 font-bold">✓</span> Citizen First
-                </span>
-              </div>
-            </div>
-
-            {/* Mission Card */}
-            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-emerald-500/25 hover:border-emerald-500/50 shadow-lg dark:shadow-emerald-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
-              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
-              
-              <div>
-                <div className="flex items-center gap-3.5 mb-4">
-                  <div className="w-11 h-11 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">PURPOSE & ACTION</span>
-                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Mission</h3>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
-                  To deliver prompt, reliable municipal services while safeguarding our environment. We resolve grievances swiftly through real-time digital tracking and active public participation.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
-                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-emerald-500 font-bold">✓</span> Swift Resolution
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-emerald-500 font-bold">✓</span> Eco-Protection
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Compact Core Values Section */}
-          <div>
-            <div className="text-center mb-6 sm:mb-8">
-              <span className="text-purple-600 dark:text-purple-400 font-bold text-[11px] uppercase tracking-widest block mb-1">GUIDING PRINCIPLES</span>
-              <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">Our Core Values</h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-              {[
-                { 
-                  title: 'Transparency', 
-                  desc: 'Complete openness in decision making and public service reporting.',
-                  icon: (
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  ),
-                  gradient: 'from-blue-500 to-indigo-600'
-                },
-                { 
-                  title: 'Accountability', 
-                  desc: 'Taking total responsibility for timely resolutions and community outcomes.',
-                  icon: (
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ),
-                  gradient: 'from-emerald-500 to-green-600'
-                },
-                { 
-                  title: 'Participation', 
-                  desc: 'Empowering residents to voice concerns and co-create local solutions.',
-                  icon: (
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 10H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ),
-                  gradient: 'from-purple-500 to-pink-600'
-                },
-                { 
-                  title: 'Innovation', 
-                  desc: 'Adopting state-of-the-art digital tools to streamline municipal services.',
-                  icon: (
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  ),
-                  gradient: 'from-amber-500 to-orange-600'
-                }
-              ].map((value, idx) => (
-                <div 
-                  key={idx} 
-                  className="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md rounded-xl p-5 border border-gray-200/80 dark:border-gray-800 hover:border-purple-500/40 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-9 h-9 bg-gradient-to-br ${value.gradient} rounded-lg flex items-center justify-center shadow-sm shrink-0`}>
-                        {value.icon}
-                      </div>
-                      <h4 className="font-bold text-gray-900 dark:text-white text-base leading-tight">{value.title}</h4>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{value.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="py-16 sm:py-20 md:py-28 px-3 sm:px-4 md:px-6 bg-gray-50 dark:bg-[#0c1018] transition-colors duration-300 relative overflow-hidden">
         {/* Ambient background glow */}
@@ -614,6 +414,206 @@ export default function Home() {
                 <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">24/7 Access</h4>
                 <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">File complaints <span className="text-purple-600 dark:text-purple-400 font-bold">anytime, anywhere</span></p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us - Vision, Mission & Core Values Section */}
+      <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
+            <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
+              <span className="text-blue-700 dark:text-blue-300 font-extrabold text-xs tracking-wider uppercase">WHO WE ARE</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Pradeshiya Sabha</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+              Dedicated to transparent governance, digital civic innovation, and community empowerment across Addalachenai.
+            </p>
+          </div>
+
+          {/* New Digital Authority Showcase Bento Card with Image */}
+          <div className="bg-gradient-to-br from-gray-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 md:p-10 border border-indigo-500/30 shadow-2xl mb-10 sm:mb-14 text-white relative overflow-hidden group">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center relative z-10">
+              {/* Left Column: Image Showcase */}
+              <div className="lg:col-span-6 relative">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black">
+                  <img src="/images/about_civic.jpg" alt="Civic Collaboration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wide">🏛️ Addalachenai Administration</span>
+                    <span className="text-xs font-semibold text-gray-200">Digital Era</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Council Overview */}
+              <div className="lg:col-span-6 space-y-5 text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                  <span>⚡ Citizen-Centric Leadership</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black leading-tight tracking-tight text-white">
+                  Empowering Addalachenai Through Next-Gen Digital Governance
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
+                  The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity.
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-white/10">
+                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
+                    <div className="text-xl font-black text-cyan-400 mb-0.5">100%</div>
+                    <div className="text-xs text-gray-300 font-medium">Digital Accountability</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
+                    <div className="text-xl font-black text-emerald-400 mb-0.5">Rapid</div>
+                    <div className="text-xs text-gray-300 font-medium">Grievance Resolution</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Compact Vision & Mission Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-10 sm:mb-14">
+            {/* Vision Card */}
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-blue-500/25 hover:border-blue-500/50 shadow-lg dark:shadow-blue-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
+              
+              <div>
+                <div className="flex items-center gap-3.5 mb-4">
+                  <div className="w-11 h-11 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">FUTURE OUTLOOK</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Vision</h3>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
+                  To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-blue-500 font-bold">✓</span> Sustainable Growth
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-blue-500 font-bold">✓</span> Citizen First
+                </span>
+              </div>
+            </div>
+
+            {/* Mission Card */}
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-gray-200/80 dark:border-emerald-500/25 hover:border-emerald-500/50 shadow-lg dark:shadow-emerald-500/5 hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute -right-12 -top-12 w-36 h-36 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-full blur-xl pointer-events-none"></div>
+              
+              <div>
+                <div className="flex items-center gap-3.5 mb-4">
+                  <div className="w-11 h-11 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">PURPOSE & ACTION</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Mission</h3>
+                  </div>
+                </div>
+
+                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
+                  To deliver prompt, reliable municipal services while safeguarding our environment. We resolve grievances swiftly through real-time digital tracking and active public participation.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
+                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-emerald-500 font-bold">✓</span> Swift Resolution
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
+                  <span className="text-emerald-500 font-bold">✓</span> Eco-Protection
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Compact Core Values Section */}
+          <div>
+            <div className="text-center mb-6 sm:mb-8">
+              <span className="text-purple-600 dark:text-purple-400 font-bold text-[11px] uppercase tracking-widest block mb-1">GUIDING PRINCIPLES</span>
+              <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">Our Core Values</h3>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {[
+                { 
+                  title: 'Transparency', 
+                  desc: 'Complete openness in decision making and public service reporting.',
+                  icon: (
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                  gradient: 'from-blue-500 to-indigo-600'
+                },
+                { 
+                  title: 'Accountability', 
+                  desc: 'Taking total responsibility for timely resolutions and community outcomes.',
+                  icon: (
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  gradient: 'from-emerald-500 to-green-600'
+                },
+                { 
+                  title: 'Participation', 
+                  desc: 'Empowering residents to voice concerns and co-create local solutions.',
+                  icon: (
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 10H9m6 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  gradient: 'from-purple-500 to-pink-600'
+                },
+                { 
+                  title: 'Innovation', 
+                  desc: 'Adopting state-of-the-art digital tools to streamline municipal services.',
+                  icon: (
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                  gradient: 'from-amber-500 to-orange-600'
+                }
+              ].map((value, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md rounded-xl p-5 border border-gray-200/80 dark:border-gray-800 hover:border-purple-500/40 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-9 h-9 bg-gradient-to-br ${value.gradient} rounded-lg flex items-center justify-center shadow-sm shrink-0`}>
+                        {value.icon}
+                      </div>
+                      <h4 className="font-bold text-gray-900 dark:text-white text-base leading-tight">{value.title}</h4>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{value.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
