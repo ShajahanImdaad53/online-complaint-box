@@ -5,10 +5,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useTheme } from './ThemeProvider';
+import { useLanguage } from './LanguageProvider';
 
 export default function Navigation() {
   const router = useRouter();
   const { theme, toggleTheme, mounted } = useTheme();
+  const { lang, setLang, t } = useLanguage();
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const [activeNav, setActiveNav] = useState('home');
   const [isUser, setIsUser] = useState(false);
   const [userRole, setUserRole] = useState(null);
@@ -84,11 +87,11 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Home', id: 'home' },
-    { name: 'Services', id: 'services' },
-    { name: 'Complaint', id: 'complaint' },
-    { name: 'About Us', id: 'about' },
-    { name: 'Contact', id: 'contact' }
+    { name: t('home'), id: 'home' },
+    { name: t('services'), id: 'services' },
+    { name: t('complaint'), id: 'complaint' },
+    { name: t('about'), id: 'about' },
+    { name: t('contact'), id: 'contact' }
   ];
 
   return (
@@ -105,8 +108,8 @@ export default function Navigation() {
               className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl shadow-md border border-gray-200 dark:border-gray-800"
             />
             <div className="text-left">
-              <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-black text-gray-900 dark:text-white leading-tight tracking-tight">Pradesha Shaba</h1>
-              <p className="text-xs sm:text-xs md:text-sm text-blue-600 dark:text-blue-400 font-semibold">Addalachenai</p>
+              <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-black text-gray-900 dark:text-white leading-tight tracking-tight">{t('title')}</h1>
+              <p className="text-xs sm:text-xs md:text-sm text-blue-600 dark:text-blue-400 font-semibold">{t('subtitle')}</p>
             </div>
           </Link>
 
@@ -132,6 +135,50 @@ export default function Navigation() {
 
           {/* Auth & Theme Toggle Section */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            {/* Multi-Language Switcher Dropdown */}
+            {mounted && (
+              <div className="relative">
+                <button
+                  onClick={() => setLangMenuOpen(!langMenuOpen)}
+                  aria-label="Select Language"
+                  title="Switch Language (English / Tamil / Sinhala)"
+                  className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold transition-all shadow-inner hover:scale-105 active:scale-95 focus:outline-none"
+                >
+                  <span className="text-sm sm:text-base leading-none">🌐</span>
+                  <span>{lang === 'ta' ? 'தமிழ்' : lang === 'si' ? 'සිංහල' : 'EN'}</span>
+                  <svg className={`w-3 sm:w-3.5 h-3 sm:h-3.5 transition-transform duration-200 ${langMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {langMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-36 sm:w-40 rounded-2xl bg-white dark:bg-[#0c1018] border border-gray-200 dark:border-gray-800 shadow-2xl py-1.5 z-50 animate-fade-in">
+                    <button
+                      onClick={() => { setLang('en'); setLangMenuOpen(false); }}
+                      className={`w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold flex items-center justify-between hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors ${lang === 'en' ? 'text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-950/30' : 'text-gray-700 dark:text-gray-300'}`}
+                    >
+                      <span>🇬🇧 English</span>
+                      {lang === 'en' && <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>}
+                    </button>
+                    <button
+                      onClick={() => { setLang('ta'); setLangMenuOpen(false); }}
+                      className={`w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold flex items-center justify-between hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors ${lang === 'ta' ? 'text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-950/30' : 'text-gray-700 dark:text-gray-300'}`}
+                    >
+                      <span>🇱🇰 தமிழ் (Tamil)</span>
+                      {lang === 'ta' && <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>}
+                    </button>
+                    <button
+                      onClick={() => { setLang('si'); setLangMenuOpen(false); }}
+                      className={`w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold flex items-center justify-between hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors ${lang === 'si' ? 'text-blue-600 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-950/30' : 'text-gray-700 dark:text-gray-300'}`}
+                    >
+                      <span>🇱🇰 සිංහල (Sinhala)</span>
+                      {lang === 'si' && <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>}
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Premium Sliding Theme Switcher */}
             {mounted && (
               <button
@@ -166,14 +213,14 @@ export default function Navigation() {
                   <svg className="hidden sm:inline-block w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 16l-4-4m0 0l-4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                   </svg>
-                  <span className="tracking-wide">Sign In</span>
+                  <span className="tracking-wide">{t('signIn')}</span>
                 </Link>
                 <Link
                   href="/auth/register"
                   className="hidden sm:inline-flex group relative items-center gap-1.5 px-5 sm:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="tracking-wide">Register</span>
+                  <span className="tracking-wide">{t('register')}</span>
                 </Link>
               </div>
             ) : (
@@ -185,7 +232,7 @@ export default function Navigation() {
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  <span className="hidden sm:inline">{userRole === 'admin' ? 'Dashboard' : 'Profile'}</span>
+                  <span className="hidden sm:inline">{userRole === 'admin' ? t('dashboard') : t('profile')}</span>
                   <span className="sm:hidden">{userRole === 'admin' ? 'Dash' : 'Prof'}</span>
                 </Link>
                 <button
@@ -196,7 +243,7 @@ export default function Navigation() {
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                   </svg>
-                  <span className="hidden sm:inline">{isLoggingOut ? 'Logging out...' : 'Logout'}</span>
+                  <span className="hidden sm:inline">{isLoggingOut ? t('loggingOut') : t('logout')}</span>
                   <span className="sm:hidden">{isLoggingOut ? 'Out...' : 'Out'}</span>
                 </button>
               </div>
@@ -226,19 +273,41 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
+            {/* Mobile Language Selector Grid */}
+            <div className="grid grid-cols-3 gap-2 py-2 border-y border-gray-200 dark:border-gray-800">
+              <button
+                onClick={() => setLang('en')}
+                className={`py-2 px-2 text-xs font-bold rounded-xl text-center transition-all ${lang === 'en' ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300'}`}
+              >
+                🇬🇧 English
+              </button>
+              <button
+                onClick={() => setLang('ta')}
+                className={`py-2 px-2 text-xs font-bold rounded-xl text-center transition-all ${lang === 'ta' ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300'}`}
+              >
+                🇱🇰 தமிழ்
+              </button>
+              <button
+                onClick={() => setLang('si')}
+                className={`py-2 px-2 text-xs font-bold rounded-xl text-center transition-all ${lang === 'si' ? 'bg-blue-600 text-white shadow-md' : 'bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300'}`}
+              >
+                🇱🇰 සිංහල
+              </button>
+            </div>
+
             {!isUser && (
               <div className="grid grid-cols-2 gap-3 pt-2">
                 <Link
                   href="/auth/login"
                   className="w-full text-center py-3 text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md"
                 >
-                  Sign In
+                  {t('signIn')}
                 </Link>
                 <Link
                   href="/auth/register"
                   className="w-full text-center py-3 text-sm font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-xl shadow-sm"
                 >
-                  Register
+                  {t('register')}
                 </Link>
               </div>
             )}

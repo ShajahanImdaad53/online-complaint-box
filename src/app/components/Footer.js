@@ -3,9 +3,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { useLanguage } from './LanguageProvider';
 
 export default function Footer() {
   const router = useRouter();
+  const { t } = useLanguage();
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -38,8 +40,8 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <h4 className="font-black text-white text-lg sm:text-xl tracking-tight">Pradesha Shaba</h4>
-                <p className="text-xs sm:text-sm text-blue-400 font-bold tracking-wider uppercase">Addalachenai Council</p>
+                <h4 className="font-black text-white text-lg sm:text-xl tracking-tight">{t('title')}</h4>
+                <p className="text-xs sm:text-sm text-blue-400 font-bold tracking-wider uppercase">{t('subtitle')} Council</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm font-normal">
@@ -47,13 +49,13 @@ export default function Footer() {
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-full border border-emerald-500/20 w-fit">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Online Complaint Portal Active</span>
+              <span>{t('footerActive')}</span>
             </div>
           </div>
 
           {/* Quick Links (Span 2) */}
           <div className="md:col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-blue-500/30 pb-1.5 w-fit">Navigation</h4>
+            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-blue-500/30 pb-1.5 w-fit">{t('footerNav')}</h4>
             <ul className="space-y-2.5 w-full">
               {['home', 'services', 'complaint', 'about', 'contact'].map((section, idx) => (
                 <li key={idx}>
@@ -62,7 +64,7 @@ export default function Footer() {
                     className="text-sm text-gray-400 hover:text-blue-400 hover:translate-x-1 transition-all duration-200 capitalize flex items-center gap-1.5 mx-auto md:mx-0 group"
                   >
                     <span className="text-xs text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">▸</span>
-                    <span>{section === 'complaint' ? 'How It Works' : section === 'about' ? 'Vision & Mission' : section}</span>
+                    <span>{t(section)}</span>
                   </button>
                 </li>
               ))}
@@ -71,30 +73,30 @@ export default function Footer() {
 
           {/* Services (Span 3) */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-indigo-500/30 pb-1.5 w-fit">Civic Actions</h4>
+            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-indigo-500/30 pb-1.5 w-fit">{t('footerCivic')}</h4>
             <ul className="space-y-2.5 w-full">
               <li>
                 <Link href="/complaint/create" className="text-sm text-gray-400 hover:text-indigo-400 hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5 justify-center md:justify-start group">
                   <span className="text-xs text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">▸</span>
-                  <span>Submit New Complaint</span>
+                  <span>{t('submitNew')}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/complaint" className="text-sm text-gray-400 hover:text-indigo-400 hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5 justify-center md:justify-start group">
                   <span className="text-xs text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">▸</span>
-                  <span>Track Complaint Status</span>
+                  <span>{t('trackStatus')}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/auth/register" className="text-sm text-gray-400 hover:text-indigo-400 hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5 justify-center md:justify-start group">
                   <span className="text-xs text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">▸</span>
-                  <span>Citizen Registration</span>
+                  <span>{t('citizenReg')}</span>
                 </Link>
               </li>
               <li>
                 <Link href="/auth/login" className="text-sm text-gray-400 hover:text-indigo-400 hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5 justify-center md:justify-start group">
                   <span className="text-xs text-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity">▸</span>
-                  <span>Staff / Citizen Login</span>
+                  <span>{t('staffLogin')}</span>
                 </Link>
               </li>
             </ul>
@@ -102,17 +104,17 @@ export default function Footer() {
 
           {/* Contact & Support (Span 3) */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-emerald-500/30 pb-1.5 w-fit">Help & Contact</h4>
+            <h4 className="font-bold text-white mb-4 text-base tracking-wide border-b border-emerald-500/30 pb-1.5 w-fit">{t('footerHelp')}</h4>
             <ul className="space-y-3 w-full">
               <li className="p-3 rounded-xl bg-white/[0.03] border border-white/5 space-y-0.5">
                 <p className="text-gray-400 text-xs flex items-center justify-center md:justify-start gap-1">
-                  <span>📞</span> Hotline Support
+                  <span>📞</span> {t('hotline')}
                 </p>
                 <p className="text-white font-bold text-sm">+94 (0) XXX XXX XXXX</p>
               </li>
               <li className="p-3 rounded-xl bg-white/[0.03] border border-white/5 space-y-0.5">
                 <p className="text-gray-400 text-xs flex items-center justify-center md:justify-start gap-1">
-                  <span>📧</span> Official Inquiry Email
+                  <span>📧</span> {t('emailSupport')}
                 </p>
                 <p className="text-white font-semibold text-xs sm:text-sm break-all">info@pradeshyasabha.lk</p>
               </li>

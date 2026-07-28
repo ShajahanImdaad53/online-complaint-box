@@ -21,6 +21,7 @@ export const metadata = {
 };
 
 import ThemeProvider from "./components/ThemeProvider";
+import LanguageProvider from "./components/LanguageProvider";
 
 export default function RootLayout({ children }) {
   return (
@@ -29,7 +30,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#07090e] text-gray-900 dark:text-gray-100 transition-colors duration-300`}
       >
         <ThemeProvider>
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -7,10 +7,12 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import { useAuthCheck } from '@/lib/hooks';
 import { SERVICES, ROUTES, API_ENDPOINTS, TIMING } from '@/lib/constants';
+import { useLanguage } from './components/LanguageProvider';
 
 export default function Home() {
   const router = useRouter();
   const { isAuthenticated } = useAuthCheck();
+  const { t } = useLanguage();
   const [selectedService, setSelectedService] = useState(null);
 
   const handleFileComplaint = async (categoryName) => {
@@ -78,13 +80,13 @@ export default function Home() {
             <div className="lg:col-span-7 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/20 shadow-lg animate-slide-in-left">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <p className="text-xs sm:text-sm font-bold tracking-wide uppercase text-blue-200">Official Municipal Portal • Addalachenai</p>
+                <p className="text-xs sm:text-sm font-bold tracking-wide uppercase text-blue-200">{t('heroBadge')} • {t('subtitle')}</p>
               </div>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-5 sm:mb-6 leading-tight tracking-tight drop-shadow-md">
-                Your Voice <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">Matters Here</span>
+                {t('heroTitle1')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">{t('heroTitle2')}</span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-8 sm:mb-10 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0 drop-shadow">
-                Report civic issues affecting your neighborhood and track their resolution in real-time. Experience transparent service delivery and digital governance designed for our community.
+                {t('heroDesc')}
               </p>
               
               {!isAuthenticated ? (
@@ -93,7 +95,7 @@ export default function Home() {
                     href="/complaint/create"
                     className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 text-sm sm:text-base border border-blue-400/30"
                   >
-                    <span>File a Complaint</span>
+                    <span>{t('fileBtn')}</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </Link>
                   <Link
@@ -101,7 +103,7 @@ export default function Home() {
                     className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base shadow-lg"
                   >
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span>Register Account</span>
+                    <span>{t('register')}</span>
                   </Link>
                 </div>
               ) : (
@@ -110,14 +112,14 @@ export default function Home() {
                     href="/complaint/create"
                     className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 text-sm sm:text-base border border-blue-400/30"
                   >
-                    <span>File a Complaint</span>
+                    <span>{t('fileBtn')}</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </Link>
                   <Link
                     href="/complaint"
                     className="inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base shadow-lg"
                   >
-                    <span>View My Complaints</span>
+                    <span>{t('trackBtn')}</span>
                   </Link>
                 </div>
               )}
@@ -172,10 +174,10 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in-down">
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-xs sm:text-sm tracking-wider uppercase">Civic Services Portal</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-xs sm:text-sm tracking-wider uppercase">{t('servicesBadge')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
-              Services We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Provide</span>
+              {t('servicesTitle')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed">
               Dedicated to maintaining the highest standards of civic management, infrastructure development, and community welfare.
@@ -198,19 +200,19 @@ export default function Home() {
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <span className="text-white text-xs font-bold px-3 py-1.5 bg-blue-600/90 backdrop-blur-md rounded-full shadow-lg">Click to Explore →</span>
+                    <span className="text-white text-xs font-bold px-3 py-1.5 bg-blue-600/90 backdrop-blur-md rounded-full shadow-lg">{t('clickExplore') || "Click to Explore →"}</span>
                   </div>
                 </div>
                 <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between items-center text-center">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">{service.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">{t('srv_' + service.id.split('-')[0] + '_title') || service.title}</h3>
                     <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-3 font-normal">
-                      {service.description}
+                      {t('srv_' + service.id.split('-')[0] + '_desc') || service.description}
                     </p>
                   </div>
                   <div className="mt-6 pt-4 w-full border-t border-gray-100 dark:border-gray-800/80 flex items-center justify-center">
                     <span className="text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      View details & submit <span className="text-base leading-none">→</span>
+                      {t('viewDetailsSubmit') || "View details & submit →"}
                     </span>
                   </div>
                 </div>
@@ -226,7 +228,7 @@ export default function Home() {
           <div className="bg-white dark:bg-[#0e131f] border border-gray-200 dark:border-gray-800 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-slide-up transition-colors duration-300">
             {/* Close Button */}
             <div className="sticky top-0 flex justify-between items-center p-6 md:p-8 bg-gradient-to-r from-gray-900 via-slate-900 to-gray-900 text-white border-b border-gray-700/80 z-10 backdrop-blur-md">
-              <h2 className="text-2xl md:text-3xl font-black">{selectedService.title}</h2>
+              <h2 className="text-2xl md:text-3xl font-black">{t('srv_' + selectedService.id.split('-')[0] + '_title') || selectedService.title}</h2>
               <button
                 onClick={() => setSelectedService(null)}
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 flex items-center justify-center transition-colors text-xl font-bold"
@@ -244,21 +246,21 @@ export default function Home() {
                   className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-4 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-full shadow-lg">Official Pradeshiya Sabha Service</span>
+                  <span className="px-4 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-full shadow-lg">{t('servicesBadge') || "Official Pradeshiya Sabha Service"}</span>
                 </div>
               </div>
 
               {/* Service Description */}
               <div className="mb-8">
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-4">About This Service</h3>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-4">{t('aboutService') || "About This Service"}</h3>
                 <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed font-normal">
-                  {selectedService.fullDescription}
+                  {t('srv_' + selectedService.id.split('-')[0] + '_desc') || selectedService.fullDescription}
                 </p>
               </div>
 
               {/* Service Details */}
               <div className="mb-8">
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-6">What We Include</h3>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-6">{t('whatWeInclude') || "What We Include"}</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {selectedService.services.map((item, idx) => (
                     <div key={idx} className="flex items-start p-4 bg-blue-50/70 dark:bg-blue-950/20 rounded-2xl border border-blue-200/60 dark:border-blue-500/20 hover:border-blue-400 dark:hover:border-blue-500/40 transition-colors">
@@ -277,14 +279,14 @@ export default function Home() {
                   }}
                   className="flex-1 px-6 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black rounded-2xl transition-all duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5 active:scale-95 text-base md:text-lg flex items-center justify-center gap-2"
                 >
-                  <span>File Complaint for {selectedService.category}</span>
+                  <span>{t('fileComplaintFor') || "File Complaint for"} {t('srv_' + selectedService.id.split('-')[0] + '_title') || selectedService.category}</span>
                   <span>→</span>
                 </button>
                 <button
                   onClick={() => setSelectedService(null)}
                   className="px-8 py-4 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100 font-bold rounded-2xl transition-all duration-300 text-base md:text-lg"
                 >
-                  Close
+                  {t('closeBtn') || "Close"}
                 </button>
               </div>
             </div>
@@ -302,10 +304,10 @@ export default function Home() {
           <div className="text-center mb-14 sm:mb-16 md:mb-20 animate-fade-in-down">
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-blue-600 dark:text-blue-400 font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold text-xs sm:text-sm tracking-wider uppercase">{t('complaintBadge')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6 leading-tight tracking-tight">
-              How to File a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Complaint</span>
+              {t('complaintTitle')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed">
               Just 4 intuitive steps to report civic issues and track their resolution in real-time. Fast, secure, and fully transparent.
@@ -322,9 +324,9 @@ export default function Home() {
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 01</div>
                 </div>
                 
-                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Create Account</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{t('step1_title') || "Create Account"}</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Register in seconds using your email or phone number to access the citizen portal securely.
+                  {t('step1_desc') || "Register in seconds using your email or phone number to access the citizen portal securely."}
                 </p>
               </div>
             </div>
@@ -337,9 +339,9 @@ export default function Home() {
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 02</div>
                 </div>
 
-                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">File Complaint</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">{t('step2_title') || "File Complaint"}</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Submit your detailed complaint with photos, description, and exact location markers.
+                  {t('step2_desc') || "Submit your detailed complaint with photos, description, and exact location markers."}
                 </p>
               </div>
             </div>
@@ -352,9 +354,9 @@ export default function Home() {
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 03</div>
                 </div>
 
-                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Track Progress</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">{t('step3_title') || "Track Progress"}</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Monitor live status updates, staff assignments, and receive instant progress notifications.
+                  {t('step3_desc') || "Monitor live status updates, staff assignments, and receive instant progress notifications."}
                 </p>
               </div>
             </div>
@@ -367,9 +369,9 @@ export default function Home() {
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 04</div>
                 </div>
 
-                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Get Resolution</h3>
+                <h3 className="font-black text-gray-900 dark:text-white mb-2 text-lg sm:text-xl group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">{t('step4_title') || "Get Resolution"}</h3>
                 <p className="text-gray-600 dark:text-gray-400 flex-grow text-xs sm:text-sm leading-relaxed font-normal">
-                  Receive resolution confirmation report, verify community improvements, and provide feedback.
+                  {t('step4_desc') || "Receive resolution confirmation report, verify community improvements, and provide feedback."}
                 </p>
               </div>
             </div>
@@ -385,8 +387,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Fast Processing</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">Average response time: <span className="text-blue-600 dark:text-blue-400 font-bold">24-48 hours</span></p>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat1_title') || "Fast Processing"}</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat1_desc') || "Average response time: 24-48 hours"}</p>
               </div>
             </div>
 
@@ -398,8 +400,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Secure & Confidential</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">Your information is <span className="text-emerald-600 dark:text-emerald-400 font-bold">protected and secure</span></p>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat2_title') || "Secure & Confidential"}</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat2_desc') || "Your information is protected and secure"}</p>
               </div>
             </div>
 
@@ -411,8 +413,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">24/7 Access</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">File complaints <span className="text-purple-600 dark:text-purple-400 font-bold">anytime, anywhere</span></p>
+                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat3_title') || "24/7 Access"}</h4>
+                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat3_desc') || "File complaints anytime, anywhere"}</p>
               </div>
             </div>
           </div>
@@ -429,10 +431,10 @@ export default function Home() {
           <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
             <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
-              <span className="text-blue-700 dark:text-blue-300 font-extrabold text-xs tracking-wider uppercase">WHO WE ARE</span>
+              <span className="text-blue-700 dark:text-blue-300 font-extrabold text-xs tracking-wider uppercase">{t('aboutBadge')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Pradeshiya Sabha</span>
+              {t('aboutTitle')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
               Dedicated to transparent governance, digital civic innovation, and community empowerment across Addalachenai.
@@ -465,16 +467,16 @@ export default function Home() {
                   Empowering Addalachenai Through Next-Gen Digital Governance
                 </h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
-                  The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity.
+                  {t('aboutCouncilDesc') || "The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity."}
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-3 border-t border-white/10">
                   <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
                     <div className="text-xl font-black text-cyan-400 mb-0.5">100%</div>
-                    <div className="text-xs text-gray-300 font-medium">Digital Accountability</div>
+                    <div className="text-xs text-gray-300 font-medium">{t('digitalAccountability') || "Digital Accountability"}</div>
                   </div>
                   <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
                     <div className="text-xl font-black text-emerald-400 mb-0.5">Rapid</div>
-                    <div className="text-xs text-gray-300 font-medium">Grievance Resolution</div>
+                    <div className="text-xs text-gray-300 font-medium">{t('rapidResolution') || "Grievance Resolution"}</div>
                   </div>
                 </div>
               </div>
@@ -496,22 +498,22 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">FUTURE OUTLOOK</span>
-                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Vision</h3>
+                    <span className="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">{t('futureOutlook') || "FUTURE OUTLOOK"}</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">{t('ourVision') || "Our Vision"}</h3>
                   </div>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
-                  To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life.
+                  {t('visionDesc') || "To build a clean, green, and technologically empowered community where every citizen enjoys superior public services, transparent governance, and an exceptional quality of life."}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-blue-500 font-bold">✓</span> Sustainable Growth
+                  <span className="text-blue-500 font-bold">✓</span> {t('sustainableGrowth') || "Sustainable Growth"}
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-blue-500 font-bold">✓</span> Citizen First
+                  <span className="text-blue-500 font-bold">✓</span> {t('citizenFirst') || "Citizen First"}
                 </span>
               </div>
             </div>
@@ -528,22 +530,22 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">PURPOSE & ACTION</span>
-                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">Our Mission</h3>
+                    <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">{t('purposeAction') || "PURPOSE & ACTION"}</span>
+                    <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white">{t('ourMission') || "Our Mission"}</h3>
                   </div>
                 </div>
 
                 <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-5">
-                  To deliver prompt, reliable municipal services while safeguarding our environment. We resolve grievances swiftly through real-time digital tracking and active public participation.
+                  {t('missionDesc') || "To deliver prompt, reliable municipal services while safeguarding our environment. We resolve grievances swiftly through real-time digital tracking and active public participation."}
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-emerald-500 font-bold">✓</span> Swift Resolution
+                  <span className="text-emerald-500 font-bold">✓</span> {t('swiftResolution') || "Swift Resolution"}
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold flex items-center gap-1">
-                  <span className="text-emerald-500 font-bold">✓</span> Eco-Protection
+                  <span className="text-emerald-500 font-bold">✓</span> {t('ecoProtection') || "Eco-Protection"}
                 </span>
               </div>
             </div>
@@ -552,8 +554,8 @@ export default function Home() {
           {/* Compact Core Values Section */}
           <div>
             <div className="text-center mb-6 sm:mb-8">
-              <span className="text-purple-600 dark:text-purple-400 font-bold text-[11px] uppercase tracking-widest block mb-1">GUIDING PRINCIPLES</span>
-              <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">Our Core Values</h3>
+              <span className="text-purple-600 dark:text-purple-400 font-bold text-[11px] uppercase tracking-widest block mb-1">{t('guidingPrinciples') || "GUIDING PRINCIPLES"}</span>
+              <h3 className="text-xl sm:text-2xl font-black text-gray-900 dark:text-white">{t('coreValues') || "Our Core Values"}</h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -608,9 +610,9 @@ export default function Home() {
                       <div className={`w-9 h-9 bg-gradient-to-br ${value.gradient} rounded-lg flex items-center justify-center shadow-sm shrink-0`}>
                         {value.icon}
                       </div>
-                      <h4 className="font-bold text-gray-900 dark:text-white text-base leading-tight">{value.title}</h4>
+                      <h4 className="font-bold text-gray-900 dark:text-white text-base leading-tight">{t('val' + (idx + 1) + '_title') || value.title}</h4>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{value.desc}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{t('val' + (idx + 1) + '_desc') || value.desc}</p>
                   </div>
                 </div>
               ))}
@@ -630,13 +632,13 @@ export default function Home() {
           <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs sm:text-sm font-bold tracking-wider uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span>Online Support Center • Active</span>
+              <span>{t('contactBadge')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
-              Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Touch</span>
+              {t('contactTitle')}
             </h2>
             <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-              Have questions, feedback, or require assistance? Reach out to our dedicated municipal staff through any of our official digital channels below.
+              {t('contactDesc') || "Have questions, feedback, or require assistance? Reach out to our dedicated municipal staff through any of our official digital channels below."}
             </p>
           </div>
 
@@ -645,20 +647,20 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-6 space-y-4">
                 <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full text-xs font-black uppercase tracking-wider inline-block">
-                  💬 Live Citizen Helpdesk
+                  {t('liveHelpdesk') || "💬 Live Citizen Helpdesk"}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-black leading-tight text-white">
-                  We Are Here For Addalachenai 24/7
+                  {t('supportTitle') || "We Are Here For Addalachenai 24/7"}
                 </h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
-                  Our digital support team monitors inquiries around the clock. Whether you need help submitting a grievance, tracking a pending case, or locating public documents, we provide rapid, transparent assistance.
+                  {t('supportDesc') || "Our digital support team monitors inquiries around the clock. Whether you need help submitting a grievance, tracking a pending case, or locating public documents, we provide rapid, transparent assistance."}
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <div className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold text-cyan-300 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Instant Online Support
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> {t('instantSupport') || "Instant Online Support"}
                   </div>
                   <div className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold text-emerald-300 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Zero Wait Times
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> {t('zeroWait') || "Zero Wait Times"}
                   </div>
                 </div>
               </div>
@@ -667,7 +669,7 @@ export default function Home() {
                   <img src="/images/contact_support.jpg" alt="Contact Support Desk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-3 right-3 px-3 py-1 bg-emerald-600/90 text-white rounded-full text-xs font-bold shadow">
-                    🟢 Systems Operational
+                    {t('systemsOperational') || "🟢 Systems Operational"}
                   </div>
                 </div>
               </div>
@@ -685,12 +687,12 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-black mb-1">Telephone Hotline</h3>
+                <h3 className="text-lg font-black mb-1">{t('telHotline') || "Telephone Hotline"}</h3>
                 <p className="text-blue-100 font-bold text-base mb-1">+94 (0) XXX XXX XXXX</p>
-                <p className="text-blue-200/80 text-xs">Mon-Sat, 8:00 AM - 5:00 PM</p>
+                <p className="text-blue-200/80 text-xs">{t('monSatHours') || "Mon-Sat, 8:00 AM - 5:00 PM"}</p>
               </div>
               <a href="tel:+94" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>CALL HOTLINE</span>
+                <span>{t('callHotline') || "CALL HOTLINE"}</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
@@ -704,12 +706,12 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-black mb-1">Email Dispatch</h3>
+                <h3 className="text-lg font-black mb-1">{t('emailDispatch') || "Email Dispatch"}</h3>
                 <p className="text-purple-100 font-bold text-base mb-1 break-all">info@pradeshya.lk</p>
-                <p className="text-purple-200/80 text-xs">24-Hour Response Guaranteed</p>
+                <p className="text-purple-200/80 text-xs">{t('guaranteed24') || "24-Hour Response Guaranteed"}</p>
               </div>
               <a href="mailto:info@pradeshya.lk" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>SEND MESSAGE</span>
+                <span>{t('sendMessage') || "SEND MESSAGE"}</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
@@ -724,12 +726,12 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-black mb-1">Headquarters</h3>
-                <p className="text-rose-100 font-bold text-base mb-1">Pradeshiya Sabha Office</p>
-                <p className="text-rose-200/80 text-xs">Addalachenai, Sri Lanka</p>
+                <h3 className="text-lg font-black mb-1">{t('headquarters') || "Headquarters"}</h3>
+                <p className="text-rose-100 font-bold text-base mb-1">{t('secOffice') || "Pradeshiya Sabha Office"}</p>
+                <p className="text-rose-200/80 text-xs">{t('slAddressShort') || "Addalachenai, Sri Lanka"}</p>
               </div>
               <a href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7" target="_blank" rel="noopener noreferrer" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>VIEW ON MAPS</span>
+                <span>{t('viewMaps') || "VIEW ON MAPS"}</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
@@ -743,14 +745,14 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-black mb-1">Working Hours</h3>
-                <p className="text-emerald-100 font-bold text-base mb-1">Mon-Fri: 8AM - 5PM</p>
-                <p className="text-emerald-200/80 text-xs">Emergency Desk: 24/7</p>
+                <h3 className="text-lg font-black mb-1">{t('workingHours') || "Working Hours"}</h3>
+                <p className="text-emerald-100 font-bold text-base mb-1">{t('monFriHours') || "Mon-Fri: 8AM - 5PM"}</p>
+                <p className="text-emerald-200/80 text-xs">{t('emergencyDesk247') || "Emergency Desk: 24/7"}</p>
               </div>
               <div className="mt-5 pt-3 border-t border-white/20 flex items-center justify-between">
                 <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-white/20 text-white border border-white/30">
                   <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></span>
-                  OPEN NOW
+                  {t('openNow') || "OPEN NOW"}
                 </span>
                 <span className="text-xs text-emerald-100 font-bold">GMT+5:30</span>
               </div>
@@ -766,18 +768,18 @@ export default function Home() {
               {/* Left Side: Secretariat Info */}
               <div className="md:col-span-5 space-y-6 text-left">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-400/40 rounded-full text-cyan-300 text-xs font-bold uppercase tracking-wider shadow">
-                  <span>📍 Official Jurisdiction</span>
+                  <span>{t('jurisdictionBadge') || "📍 Official Jurisdiction"}</span>
                 </div>
                 <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
-                  Main Municipal Secretariat
+                  {t('secretariatTitle') || "Main Municipal Secretariat"}
                 </h4>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
-                  Our secretariat serves all citizens of the Addalachenai Pradeshiya Sabha area for public consultations, civic development inquiries, and administrative support.
+                  {t('secretariatDesc') || "Our secretariat serves all citizens of the Addalachenai Pradeshiya Sabha area for public consultations, civic development inquiries, and administrative support."}
                 </p>
                 <div className="p-6 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/15 shadow-inner space-y-3">
                   <p className="text-white font-bold text-base sm:text-lg">
-                    Pradeshiya Sabha Office<br/>
-                    <span className="text-cyan-300 font-medium text-xs sm:text-sm">Addalachenai, Ampara District, Eastern Province, Sri Lanka</span>
+                    {t('secOffice') || "Pradeshiya Sabha Office"}<br/>
+                    <span className="text-cyan-300 font-medium text-xs sm:text-sm">{t('secAddress') || "Addalachenai, Ampara District, Eastern Province, Sri Lanka"}</span>
                   </p>
                   <a
                     href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7"
@@ -789,7 +791,7 @@ export default function Home() {
                       <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
-                      GET INTERACTIVE DIRECTIONS
+                      {t('getDirections') || "GET INTERACTIVE DIRECTIONS"}
                     </span>
                   </a>
                 </div>
@@ -800,39 +802,39 @@ export default function Home() {
                 <div className="flex items-center justify-between border-b border-white/15 pb-4">
                   <h4 className="text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 flex items-center gap-2.5">
                     <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
-                    Operational Schedule
+                    {t('opSchedule') || "Operational Schedule"}
                   </h4>
-                  <span className="text-xs font-extrabold text-cyan-300 px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/30">Active Timetable</span>
+                  <span className="text-xs font-extrabold text-cyan-300 px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/30">{t('activeTimetable') || "Active Timetable"}</span>
                 </div>
 
                 <div className="space-y-3">
                   {/* Monday - Friday */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-transparent border border-emerald-500/30 gap-2">
                     <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span> Monday - Friday
+                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span> {t('monFri') || "Monday - Friday"}
                     </span>
                     <span className="text-emerald-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-emerald-500/20 rounded-lg border border-emerald-400/40 w-fit">
-                      08:00 AM - 05:00 PM
+                      {t('monFriSchedule') || "08:00 AM - 05:00 PM"}
                     </span>
                   </div>
 
                   {/* Saturday */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-blue-500/15 via-indigo-500/10 to-transparent border border-blue-500/30 gap-2">
                     <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-blue-400"></span> Saturday
+                      <span className="w-2 h-2 rounded-full bg-blue-400"></span> {t('saturday') || "Saturday"}
                     </span>
                     <span className="text-blue-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-blue-500/20 rounded-lg border border-blue-400/40 w-fit">
-                      09:00 AM - 01:00 PM
+                      {t('satSchedule') || "09:00 AM - 01:00 PM"}
                     </span>
                   </div>
 
                   {/* Sunday & Holidays */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-rose-500/15 via-red-500/10 to-transparent border border-rose-500/30 gap-2">
                     <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-rose-400"></span> Sunday & Public Holidays
+                      <span className="w-2 h-2 rounded-full bg-rose-400"></span> {t('sundayHolidays') || "Sunday & Public Holidays"}
                     </span>
                     <span className="text-rose-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-rose-500/20 rounded-lg border border-rose-400/40 w-fit">
-                      Closed • Online Portal Open
+                      {t('closedPortalOpen') || "Closed • Online Portal Open"}
                     </span>
                   </div>
                 </div>
@@ -842,8 +844,8 @@ export default function Home() {
                   <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-red-500/20 border border-amber-500/40 flex items-center gap-3.5 shadow-lg">
                     <span className="text-3xl animate-bounce">🚨</span>
                     <div>
-                      <p className="text-xs font-black text-amber-300 uppercase tracking-wider">24/7 Emergency Dispatch Active</p>
-                      <p className="text-xs sm:text-sm text-gray-200 font-medium">For urgent civic crises (severe flooding, road hazards, water pipe ruptures), our emergency response hotline is staffed 365 days a year.</p>
+                      <p className="text-xs font-black text-amber-300 uppercase tracking-wider">{t('emergencyTitle') || "24/7 Emergency Dispatch Active"}</p>
+                      <p className="text-xs sm:text-sm text-gray-200 font-medium">{t('emergencyDesc') || "For urgent civic crises (severe flooding, road hazards, water pipe ruptures), our emergency response hotline is staffed 365 days a year."}</p>
                     </div>
                   </div>
                 </div>
