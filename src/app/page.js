@@ -163,23 +163,65 @@ export default function Home() {
       </section>
 
       {/* About Us - Vision, Mission & Core Values Section */}
-      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
+      <section id="about" className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#07090e] dark:via-[#0c1018] dark:to-[#07090e] relative overflow-hidden transition-colors duration-300">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
 
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-8 sm:mb-12 animate-fade-in-down">
-            <div className="inline-flex items-center gap-2 mb-2 px-3.5 py-1 bg-blue-50 dark:bg-blue-950/60 border border-blue-200/60 dark:border-blue-800/60 rounded-full shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
-              <span className="text-blue-700 dark:text-blue-300 font-bold text-[11px] tracking-wider uppercase">WHO WE ARE</span>
+          <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
+            <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-full shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-ping"></span>
+              <span className="text-blue-700 dark:text-blue-300 font-extrabold text-xs tracking-wider uppercase">WHO WE ARE</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-2 leading-tight tracking-tight">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Vision & Mission</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight tracking-tight">
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">Pradeshiya Sabha</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-medium">
-              Dedicated to transparent governance, digital innovation, and community empowerment.
+            <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+              Dedicated to transparent governance, digital civic innovation, and community empowerment across Addalachenai.
             </p>
+          </div>
+
+          {/* New Digital Authority Showcase Bento Card with Image */}
+          <div className="bg-gradient-to-br from-gray-900 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 md:p-10 border border-indigo-500/30 shadow-2xl mb-10 sm:mb-14 text-white relative overflow-hidden group">
+            <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none group-hover:bg-blue-500/30 transition-all duration-700"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-center relative z-10">
+              {/* Left Column: Image Showcase */}
+              <div className="lg:col-span-6 relative">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black">
+                  <img src="/images/about_civic.jpg" alt="Civic Collaboration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wide">🏛️ Addalachenai Administration</span>
+                    <span className="text-xs font-semibold text-gray-200">Digital Era</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Council Overview */}
+              <div className="lg:col-span-6 space-y-5 text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                  <span>⚡ Citizen-Centric Leadership</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black leading-tight tracking-tight text-white">
+                  Empowering Addalachenai Through Next-Gen Digital Governance
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
+                  The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity.
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-3 border-t border-white/10">
+                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
+                    <div className="text-xl font-black text-cyan-400 mb-0.5">100%</div>
+                    <div className="text-xs text-gray-300 font-medium">Digital Accountability</div>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/[0.05] border border-white/10">
+                    <div className="text-xl font-black text-emerald-400 mb-0.5">Rapid</div>
+                    <div className="text-xs text-gray-300 font-medium">Grievance Resolution</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Compact Vision & Mission Bento Grid */}
@@ -580,169 +622,228 @@ export default function Home() {
       {/* Contact Section - Futuristic Command Portal */}
       <section id="contact" className="py-16 sm:py-20 md:py-28 lg:py-36 px-3 sm:px-4 md:px-6 bg-gradient-to-b from-slate-900 via-[#070b12] to-black text-white relative overflow-hidden transition-colors duration-300">
         {/* Ambient neon lighting */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-[160px] pointer-events-none animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-600/15 rounded-full blur-[160px] pointer-events-none animate-pulse" style={{ animationDelay: '3s' }}></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-14 sm:mb-16 md:mb-20 animate-fade-in-down">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs sm:text-sm font-bold tracking-wider uppercase mb-6 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+          <div className="text-center mb-10 sm:mb-14 animate-fade-in-down">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs sm:text-sm font-bold tracking-wider uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.15)]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
               <span>Online Support Center • Active</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
               Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400">Touch</span>
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed">
-              Have questions, feedback, or require urgent assistance? Reach out to our dedicated municipal staff through any of our official channels below.
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
+              Have questions, feedback, or require assistance? Reach out to our dedicated municipal staff through any of our official digital channels below.
             </p>
           </div>
 
-          {/* Contact Cards Grid */}
+          {/* Support Desk Image Banner */}
+          <div className="bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 rounded-3xl p-6 sm:p-8 md:p-10 border border-cyan-500/30 shadow-2xl mb-12 sm:mb-16 relative overflow-hidden group">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+              <div className="lg:col-span-6 space-y-4">
+                <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full text-xs font-black uppercase tracking-wider inline-block">
+                  💬 Live Citizen Helpdesk
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black leading-tight text-white">
+                  We Are Here For Addalachenai 24/7
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
+                  Our digital support team monitors inquiries around the clock. Whether you need help submitting a grievance, tracking a pending case, or locating public documents, we provide rapid, transparent assistance.
+                </p>
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <div className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold text-cyan-300 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Instant Online Support
+                  </div>
+                  <div className="px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-xs font-bold text-emerald-300 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Zero Wait Times
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-6">
+                <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-black">
+                  <img src="/images/contact_support.jpg" alt="Contact Support Desk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-3 right-3 px-3 py-1 bg-emerald-600/90 text-white rounded-full text-xs font-bold shadow">
+                    🟢 Systems Operational
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Colorful Contact Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 sm:mb-20">
             {/* Phone Card */}
-            <div className="group relative bg-white/[0.04] dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl flex flex-col justify-between overflow-hidden">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 rounded-3xl p-6 sm:p-7 border border-blue-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-blue-600/20 flex flex-col justify-between overflow-hidden text-white">
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
               <div>
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30 border border-white/20">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Telephone</h3>
-                <p className="text-gray-300 font-medium text-base mb-2">+94 (0) XXX XXX XXXX</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Mon-Sat, 8:00 AM - 5:00 PM</p>
+                <h3 className="text-lg font-black mb-1">Telephone Hotline</h3>
+                <p className="text-blue-100 font-bold text-base mb-1">+94 (0) XXX XXX XXXX</p>
+                <p className="text-blue-200/80 text-xs">Mon-Sat, 8:00 AM - 5:00 PM</p>
               </div>
-              <a href="tel:+94" className="mt-6 pt-4 border-t border-white/10 text-blue-400 hover:text-blue-300 font-bold text-sm inline-flex items-center gap-1 group/link transition-colors">
-                <span>Call Hotline</span>
-                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              <a href="tel:+94" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
+                <span>CALL HOTLINE</span>
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 
             {/* Email Card */}
-            <div className="group relative bg-white/[0.04] dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl flex flex-col justify-between overflow-hidden">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-purple-600 via-fuchsia-600 to-pink-600 rounded-3xl p-6 sm:p-7 border border-purple-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-purple-600/20 flex flex-col justify-between overflow-hidden text-white">
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
               <div>
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30 border border-white/20">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Email Us</h3>
-                <p className="text-gray-300 font-medium text-base mb-2 break-all">info@pradeshya.lk</p>
-                <p className="text-gray-500 text-xs sm:text-sm">24-hour response guaranteed</p>
+                <h3 className="text-lg font-black mb-1">Email Dispatch</h3>
+                <p className="text-purple-100 font-bold text-base mb-1 break-all">info@pradeshya.lk</p>
+                <p className="text-purple-200/80 text-xs">24-Hour Response Guaranteed</p>
               </div>
-              <a href="mailto:info@pradeshya.lk" className="mt-6 pt-4 border-t border-white/10 text-purple-400 hover:text-purple-300 font-bold text-sm inline-flex items-center gap-1 group/link transition-colors">
-                <span>Send Dispatch</span>
-                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              <a href="mailto:info@pradeshya.lk" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
+                <span>SEND MESSAGE</span>
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 
             {/* Location Card */}
-            <div className="group relative bg-white/[0.04] dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-rose-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl flex flex-col justify-between overflow-hidden">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-rose-500/10 rounded-full blur-2xl group-hover:bg-rose-500/20 transition-all duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-rose-600 via-red-600 to-amber-600 rounded-3xl p-6 sm:p-7 border border-rose-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-rose-600/20 flex flex-col justify-between overflow-hidden text-white">
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
               <div>
-                <div className="w-14 h-14 bg-gradient-to-br from-rose-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-rose-500/30 border border-white/20">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Headquarters</h3>
-                <p className="text-gray-300 font-medium text-base mb-2">Pradeshiya Sabha Office</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Addalachenai, Sri Lanka</p>
+                <h3 className="text-lg font-black mb-1">Headquarters</h3>
+                <p className="text-rose-100 font-bold text-base mb-1">Pradeshiya Sabha Office</p>
+                <p className="text-rose-200/80 text-xs">Addalachenai, Sri Lanka</p>
               </div>
-              <a href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7" target="_blank" rel="noopener noreferrer" className="mt-6 pt-4 border-t border-white/10 text-rose-400 hover:text-rose-300 font-bold text-sm inline-flex items-center gap-1 group/link transition-colors">
-                <span>View Google Maps</span>
-                <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+              <a href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7" target="_blank" rel="noopener noreferrer" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
+                <span>VIEW ON MAPS</span>
+                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 
             {/* Hours Card */}
-            <div className="group relative bg-white/[0.04] dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl p-7 sm:p-8 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-2 shadow-2xl flex flex-col justify-between overflow-hidden">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
+            <div className="group relative bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-3xl p-6 sm:p-7 border border-emerald-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-emerald-600/20 flex flex-col justify-between overflow-hidden text-white">
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
               <div>
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-emerald-500/30 border border-white/20">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Working Hours</h3>
-                <p className="text-gray-300 font-medium text-base mb-2">Mon-Fri: 8:00 AM - 5:00 PM</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Emergency Desk: 24/7</p>
+                <h3 className="text-lg font-black mb-1">Working Hours</h3>
+                <p className="text-emerald-100 font-bold text-base mb-1">Mon-Fri: 8AM - 5PM</p>
+                <p className="text-emerald-200/80 text-xs">Emergency Desk: 24/7</p>
               </div>
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full mr-2 animate-pulse"></span>
-                  Open Now
+              <div className="mt-5 pt-3 border-t border-white/20 flex items-center justify-between">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-white/20 text-white border border-white/30">
+                  <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></span>
+                  OPEN NOW
                 </span>
-                <span className="text-xs text-gray-400">GMT+5:30</span>
+                <span className="text-xs text-emerald-100 font-bold">GMT+5:30</span>
               </div>
             </div>
           </div>
 
-          {/* Office Location Details Bento Box */}
-          <div className="bg-gradient-to-br from-white/[0.06] to-white/[0.01] backdrop-blur-2xl rounded-3xl p-8 sm:p-10 md:p-14 border border-white/15 shadow-2xl relative overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 text-xs font-bold uppercase tracking-wider">
+          {/* Ultra-Colorful Operational Schedule & Jurisdiction Bento Box */}
+          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 md:p-14 border border-indigo-500/40 shadow-[0_0_50px_rgba(79,70,229,0.15)] relative overflow-hidden">
+            <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -left-20 -top-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+              {/* Left Side: Secretariat Info */}
+              <div className="md:col-span-5 space-y-6 text-left">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-400/40 rounded-full text-cyan-300 text-xs font-bold uppercase tracking-wider shadow">
                   <span>📍 Official Jurisdiction</span>
                 </div>
-                <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Main Municipal Secretariat</h4>
-                <p className="text-gray-300 text-base sm:text-lg leading-relaxed font-normal">
-                  Our secretariat is open to all citizens of Addalachenai Pradeshiya Sabha area for public consultations, document submissions, and civic inquiries.
+                <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
+                  Main Municipal Secretariat
+                </h4>
+                <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
+                  Our secretariat serves all citizens of the Addalachenai Pradeshiya Sabha area for public consultations, civic development inquiries, and administrative support.
                 </p>
-                <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
-                  <p className="text-gray-200 font-semibold text-base sm:text-lg">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-white/15 shadow-inner space-y-3">
+                  <p className="text-white font-bold text-base sm:text-lg">
                     Pradeshiya Sabha Office<br/>
-                    <span className="text-gray-400 font-normal text-sm sm:text-base">Addalachenai, Ampara District, Eastern Province, Sri Lanka</span>
+                    <span className="text-cyan-300 font-medium text-xs sm:text-sm">Addalachenai, Ampara District, Eastern Province, Sri Lanka</span>
                   </p>
                   <a
                     href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-bold transition-colors group/btn text-sm sm:text-base pt-2"
+                    className="inline-flex items-center gap-2 text-white hover:text-cyan-200 font-extrabold transition-all text-xs sm:text-sm pt-2 group/btn"
                   >
-                    <span className="px-4 py-2 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/40 rounded-xl transition-colors flex items-center gap-2">
+                    <span className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 border border-blue-400/50 rounded-xl transition-all shadow-md flex items-center gap-2">
                       <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
-                      Get Interactive Directions
+                      GET INTERACTIVE DIRECTIONS
                     </span>
                   </a>
                 </div>
               </div>
 
-              <div className="space-y-6 bg-black/40 dark:bg-black/60 p-7 sm:p-8 rounded-3xl border border-white/10 shadow-inner">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <h4 className="text-xl font-bold text-white flex items-center gap-2">
-                    <span className="w-3 h-3 rounded-full bg-cyan-400"></span>
+              {/* Right Side: Colorful Operational Schedule */}
+              <div className="md:col-span-7 bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl space-y-5">
+                <div className="flex items-center justify-between border-b border-white/15 pb-4">
+                  <h4 className="text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 flex items-center gap-2.5">
+                    <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
                     Operational Schedule
                   </h4>
-                  <span className="text-xs text-gray-400 px-2.5 py-1 bg-white/5 rounded-full border border-white/10">Standard Hours</span>
+                  <span className="text-xs font-extrabold text-cyan-300 px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/30">Active Timetable</span>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-2 border-b border-white/5">
-                    <span className="text-gray-300 font-medium text-sm sm:text-base">Monday - Friday</span>
-                    <span className="text-emerald-400 font-bold text-sm sm:text-base px-3 py-1 bg-emerald-500/10 rounded-lg border border-emerald-500/20">8:00 AM - 5:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2 border-b border-white/5">
-                    <span className="text-gray-300 font-medium text-sm sm:text-base">Saturday</span>
-                    <span className="text-blue-400 font-bold text-sm sm:text-base px-3 py-1 bg-blue-500/10 rounded-lg border border-blue-500/20">9:00 AM - 1:00 PM</span>
-                  </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-gray-300 font-medium text-sm sm:text-base">Sunday & Public Holidays</span>
-                    <span className="text-rose-400 font-bold text-sm sm:text-base px-3 py-1 bg-rose-500/10 rounded-lg border border-rose-500/20">Closed</span>
+                <div className="space-y-3">
+                  {/* Monday - Friday */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-transparent border border-emerald-500/30 gap-2">
+                    <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span> Monday - Friday
+                    </span>
+                    <span className="text-emerald-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-emerald-500/20 rounded-lg border border-emerald-400/40 w-fit">
+                      08:00 AM - 05:00 PM
+                    </span>
                   </div>
 
-                  <div className="pt-4 mt-2 border-t border-white/10">
-                    <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 flex items-center gap-3">
-                      <span className="text-2xl">🚨</span>
-                      <div>
-                        <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">24/7 Emergency Dispatch</p>
-                        <p className="text-xs sm:text-sm text-gray-300">For urgent civic issues (flooding, hazards, water breaks), hotline is staffed 365 days a year.</p>
-                      </div>
+                  {/* Saturday */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-blue-500/15 via-indigo-500/10 to-transparent border border-blue-500/30 gap-2">
+                    <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-400"></span> Saturday
+                    </span>
+                    <span className="text-blue-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-blue-500/20 rounded-lg border border-blue-400/40 w-fit">
+                      09:00 AM - 01:00 PM
+                    </span>
+                  </div>
+
+                  {/* Sunday & Holidays */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-rose-500/15 via-red-500/10 to-transparent border border-rose-500/30 gap-2">
+                    <span className="text-white font-bold text-sm sm:text-base flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-rose-400"></span> Sunday & Public Holidays
+                    </span>
+                    <span className="text-rose-300 font-extrabold text-xs sm:text-sm px-3 py-1 bg-rose-500/20 rounded-lg border border-rose-400/40 w-fit">
+                      Closed • Online Portal Open
+                    </span>
+                  </div>
+                </div>
+
+                {/* Emergency Hotline Alert */}
+                <div className="pt-2">
+                  <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-red-500/20 border border-amber-500/40 flex items-center gap-3.5 shadow-lg">
+                    <span className="text-3xl animate-bounce">🚨</span>
+                    <div>
+                      <p className="text-xs font-black text-amber-300 uppercase tracking-wider">24/7 Emergency Dispatch Active</p>
+                      <p className="text-xs sm:text-sm text-gray-200 font-medium">For urgent civic crises (severe flooding, road hazards, water pipe ruptures), our emergency response hotline is staffed 365 days a year.</p>
                     </div>
                   </div>
                 </div>

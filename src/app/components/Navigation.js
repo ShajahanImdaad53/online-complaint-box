@@ -85,9 +85,9 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', id: 'home' },
-    { name: 'About Us', id: 'about' },
     { name: 'Services', id: 'services' },
     { name: 'Complaint', id: 'complaint' },
+    { name: 'About Us', id: 'about' },
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -131,24 +131,28 @@ export default function Navigation() {
           </nav>
 
           {/* Auth & Theme Toggle Section */}
-          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
-            {/* Theme Toggle Button */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            {/* Premium Sliding Theme Switcher */}
             {mounted && (
               <button
                 onClick={toggleTheme}
-                aria-label="Toggle Night Mode"
-                className="p-2 sm:p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800/80 text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 border border-gray-200 dark:border-gray-700/60 shadow-sm hover:scale-105 active:scale-95 flex items-center justify-center group"
-                title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Night Mode'}
+                aria-label="Toggle Theme"
+                title={theme === 'dark' ? 'Switch to Day Mode' : 'Switch to Night Mode'}
+                className="relative inline-flex items-center h-8 sm:h-9 w-16 sm:w-18 rounded-full p-1 transition-all duration-500 bg-gray-200 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border border-gray-300 dark:border-indigo-500/40 shadow-inner hover:scale-105 active:scale-95 group focus:outline-none"
               >
-                {theme === 'dark' ? (
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 animate-spin-slow group-hover:rotate-45 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 1.32a1 1 0 011.415 0l.708.707a1 1 0 01-1.414 1.414l-.708-.707a1 1 0 010-1.414zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zm-1.32 4.22a1 1 0 010 1.415l-.707.708a1 1 0 01-1.414-1.414l.707-.708a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-1.32a1 1 0 010 1.415l-.708.708a1 1 0 01-1.414-1.414l.708-.708a1 1 0 011.414 0zM4 10a1 1 0 01-1-1H2a1 1 0 110 2h1a1 1 0 011-1zm1.32-4.22a1 1 0 011.415 0l.708-.707a1 1 0 01-1.414 1.414L3.906 5.2a1 1 0 010-1.415zM10 6a4 4 0 100 8 4 4 0 000-8z" clipRule="evenodd" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5 sm:w-5 sm:h-5 text-gray-700 group-hover:-rotate-12 transition-transform" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                  </svg>
-                )}
+                {/* Sliding indicator thumb */}
+                <span className={`absolute flex items-center justify-center w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-white dark:bg-gradient-to-tr dark:from-indigo-500 dark:to-purple-500 shadow-md transform transition-transform duration-500 ease-out ${theme === 'dark' ? 'translate-x-8 sm:translate-x-9 text-white' : 'translate-x-0 text-amber-500'}`}>
+                  {theme === 'dark' ? (
+                    <span className="text-[11px] sm:text-[13px] leading-none">🌙</span>
+                  ) : (
+                    <span className="text-[11px] sm:text-[13px] leading-none">☀️</span>
+                  )}
+                </span>
+                {/* Background icons inside track */}
+                <div className="flex justify-between items-center w-full px-1 text-[11px] sm:text-[12px] pointer-events-none select-none">
+                  <span className={`transition-opacity duration-300 ${theme === 'dark' ? 'opacity-40' : 'opacity-0'}`}>☀️</span>
+                  <span className={`transition-opacity duration-300 ${theme === 'dark' ? 'opacity-0' : 'opacity-40'}`}>🌙</span>
+                </div>
               </button>
             )}
 
