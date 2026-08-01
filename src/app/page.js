@@ -381,40 +381,40 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {/* Feature 1 */}
             <div className="group relative bg-gradient-to-br from-blue-50/80 to-indigo-50/80 dark:from-gray-900/80 dark:to-blue-950/30 rounded-3xl p-6 sm:p-8 border border-blue-200/80 dark:border-blue-500/20 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl dark:shadow-none animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+              <div className="relative flex flex-row items-center gap-4 sm:flex-col sm:items-start sm:gap-0 text-left">
+                <div className="w-16 h-16 sm:mb-4 shrink-0 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 ease-out">
+                  <img src="/images/feat_fast_processing.png" alt="Fast Processing" className="w-full h-full object-contain drop-shadow-xl" />
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat1_title') || "Fast Processing"}</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat1_desc') || "Average response time: 24-48 hours"}</p>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 text-base sm:text-lg">{t('feat1_title') || "Fast Processing"}</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat1_desc') || "Average response time: 24-48 hours"}</p>
+                </div>
               </div>
             </div>
 
             {/* Feature 2 */}
             <div className="group relative bg-gradient-to-br from-green-50/80 to-emerald-50/80 dark:from-gray-900/80 dark:to-emerald-950/30 rounded-3xl p-6 sm:p-8 border border-green-200/80 dark:border-emerald-500/20 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-xl dark:shadow-none animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/20">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
+              <div className="relative flex flex-row items-center gap-4 sm:flex-col sm:items-start sm:gap-0 text-left">
+                <div className="w-16 h-16 sm:mb-4 shrink-0 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 ease-out">
+                  <img src="/images/feat_secure_confidential.png" alt="Secure & Confidential" className="w-full h-full object-contain drop-shadow-xl" />
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat2_title') || "Secure & Confidential"}</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat2_desc') || "Your information is protected and secure"}</p>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 text-base sm:text-lg">{t('feat2_title') || "Secure & Confidential"}</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat2_desc') || "Your information is protected and secure"}</p>
+                </div>
               </div>
             </div>
 
             {/* Feature 3 */}
             <div className="group relative bg-gradient-to-br from-purple-50/80 to-pink-50/80 dark:from-gray-900/80 dark:to-purple-950/30 rounded-3xl p-6 sm:p-8 border border-purple-200/80 dark:border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl dark:shadow-none animate-fade-in-up sm:col-span-2 md:col-span-1" style={{ animationDelay: '0.7s' }}>
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/20">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <div className="relative flex flex-row items-center gap-4 sm:flex-col sm:items-start sm:gap-0 text-left">
+                <div className="w-16 h-16 sm:mb-4 shrink-0 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500 ease-out">
+                  <img src="/images/feat_247_access.png" alt="24/7 Access" className="w-full h-full object-contain drop-shadow-xl" />
                 </div>
-                <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">{t('feat3_title') || "24/7 Access"}</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat3_desc') || "File complaints anytime, anywhere"}</p>
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-1 sm:mb-2 text-base sm:text-lg">{t('feat3_title') || "24/7 Access"}</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm font-normal">{t('feat3_desc') || "File complaints anytime, anywhere"}</p>
+                </div>
               </div>
             </div>
           </div>
