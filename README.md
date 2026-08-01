@@ -75,5 +75,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 <div align="center">
-  Made with ❤️ by <a href="https://github.com/ShajahanImdaad53">Shajahan Imdaad</a>
+  Made  by <a href="https://github.com/ShajahanImdaad53">Shajahan Imdaad</a>
 </div>
