@@ -191,6 +191,13 @@ export default function CreateComplaintContent() {
       }
 
       setSuccess('Complaint submitted successfully!');
+      
+      // Prepare and open WhatsApp message
+      const whatsappNumber = '94754738475';
+      const whatsappText = `Hello, a new complaint has been submitted:\n\n* Title: ${formData.title}\n* Category: ${formData.category}\n* Address: ${formData.address || 'N/A'}\n* Description: ${formData.description}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappText)}`;
+      window.open(whatsappUrl, '_blank');
+
       setTimeout(() => {
         router.push(ROUTES.HOME);
       }, TIMING.successMessageDuration);

@@ -320,7 +320,7 @@ export default function Home() {
             <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
                 <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-blue-500/20">
-                  <img src="/images/step_account.jpg" alt="Create Account" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src="/images/step_account_new.png" alt="Create Account" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 01</div>
                 </div>
                 
@@ -335,7 +335,7 @@ export default function Home() {
             <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
                 <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-emerald-500/20">
-                  <img src="/images/step_complaint.jpg" alt="File Complaint" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src="/images/step_complaint_new.png" alt="File Complaint" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 02</div>
                 </div>
 
@@ -350,7 +350,7 @@ export default function Home() {
             <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
                 <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-amber-500/20">
-                  <img src="/images/step_track.jpg" alt="Track Progress" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src="/images/step_track_new.png" alt="Track Progress" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 03</div>
                 </div>
 
@@ -365,7 +365,7 @@ export default function Home() {
             <div className="relative text-center group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="flex flex-col h-full bg-gray-50/80 dark:bg-gray-900/50 backdrop-blur-md p-5 sm:p-6 rounded-3xl border border-gray-200/80 dark:border-gray-800/80 hover:border-purple-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1.5">
                 <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden mb-5 shadow-inner bg-gray-900 group-hover:shadow-purple-500/20">
-                  <img src="/images/step_resolution.jpg" alt="Get Resolution" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <img src="/images/step_resolution_new.png" alt="Get Resolution" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-2 right-2 px-2.5 py-1 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-extrabold rounded-full shadow">STEP 04</div>
                 </div>
 

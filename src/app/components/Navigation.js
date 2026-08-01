@@ -114,7 +114,7 @@ export default function Navigation() {
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 flex-wrap px-2">
+          <nav className="hidden xl:flex items-center justify-center gap-2 xl:gap-4 2xl:gap-6 px-2 whitespace-nowrap">
             {navItems.map((item) => (
               <button
                 key={item.id}
