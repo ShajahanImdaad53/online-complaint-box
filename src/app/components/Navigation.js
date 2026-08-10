@@ -96,8 +96,8 @@ export default function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-[#07090e]/80 backdrop-blur-xl border-b border-gray-200/80 dark:border-gray-800/80 shadow-sm transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5">
-        <div className="flex justify-between items-center gap-2 xl:gap-4">
+      <div className="max-w-[1440px] mx-auto px-2 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5">
+        <div className="flex justify-between items-center gap-1 xl:gap-2">
           {/* Logo & Branding */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 md:gap-3 hover:opacity-80 transition-opacity flex-shrink-0">
             <Image
@@ -114,12 +114,12 @@ export default function Navigation() {
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden xl:flex items-center justify-center gap-2 xl:gap-4 2xl:gap-6 px-2 whitespace-nowrap">
+          <nav className="hidden xl:flex items-center justify-center gap-1.5 xl:gap-2.5 2xl:gap-5 px-2 whitespace-nowrap">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-2.5 2xl:px-4 py-2 rounded-lg font-bold text-xs 2xl:text-base whitespace-nowrap transition-all duration-300 relative ${
+                className={`px-2 xl:px-2.5 2xl:px-4 py-2 rounded-lg font-bold text-xs 2xl:text-base whitespace-nowrap transition-all duration-300 relative ${
                   activeNav === item.id
                     ? 'text-blue-600 dark:text-blue-400 font-bold'
                     : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
@@ -132,9 +132,9 @@ export default function Navigation() {
               </button>
             ))}
           </nav>
-
+ 
           {/* Auth & Theme Toggle Section */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-1 xl:gap-2 2xl:gap-3 flex-shrink-0">
             {/* Multi-Language Switcher Dropdown */}
             {mounted && (
               <div className="relative">
@@ -142,7 +142,7 @@ export default function Navigation() {
                   onClick={() => setLangMenuOpen(!langMenuOpen)}
                   aria-label="Select Language"
                   title="Switch Language (English / Tamil / Sinhala)"
-                  className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold transition-all shadow-inner hover:scale-105 active:scale-95 focus:outline-none"
+                  className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold transition-all shadow-inner hover:scale-105 active:scale-95 focus:outline-none"
                 >
                   <span className="text-sm sm:text-base leading-none">🌐</span>
                   <span>{lang === 'ta' ? 'தமிழ்' : lang === 'si' ? 'සිංහල' : 'EN'}</span>
@@ -150,7 +150,7 @@ export default function Navigation() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-
+ 
                 {langMenuOpen && (
                   <div className="absolute right-0 mt-2 w-36 sm:w-40 rounded-2xl bg-white dark:bg-[#0c1018] border border-gray-200 dark:border-gray-800 shadow-2xl py-1.5 z-50 animate-fade-in">
                     <button
@@ -178,17 +178,17 @@ export default function Navigation() {
                 )}
               </div>
             )}
-
+ 
             {/* Premium Sliding Theme Switcher */}
             {mounted && (
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle Theme"
                 title={theme === 'dark' ? 'Switch to Day Mode' : 'Switch to Night Mode'}
-                className="relative inline-flex items-center h-8 sm:h-9 w-16 sm:w-18 rounded-full p-1 transition-all duration-500 bg-gray-200 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border border-gray-300 dark:border-indigo-500/40 shadow-inner hover:scale-105 active:scale-95 group focus:outline-none"
+                className="relative inline-flex items-center h-8 sm:h-9 w-15 sm:w-16 rounded-full p-1 transition-all duration-500 bg-gray-200 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border border-gray-300 dark:border-indigo-500/40 shadow-inner hover:scale-105 active:scale-95 group focus:outline-none flex-shrink-0"
               >
                 {/* Sliding indicator thumb */}
-                <span className={`absolute flex items-center justify-center w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-white dark:bg-gradient-to-tr dark:from-indigo-500 dark:to-purple-500 shadow-md transform transition-transform duration-500 ease-out ${theme === 'dark' ? 'translate-x-8 sm:translate-x-9 text-white' : 'translate-x-0 text-amber-500'}`}>
+                <span className={`absolute flex items-center justify-center w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-white dark:bg-gradient-to-tr dark:from-indigo-500 dark:to-purple-500 shadow-md transform transition-transform duration-500 ease-out ${theme === 'dark' ? 'translate-x-7 sm:translate-x-8 text-white' : 'translate-x-0 text-amber-500'}`}>
                   {theme === 'dark' ? (
                     <span className="text-[11px] sm:text-[13px] leading-none">🌙</span>
                   ) : (
@@ -202,12 +202,12 @@ export default function Navigation() {
                 </div>
               </button>
             )}
-
+ 
             {!isUser ? (
-              <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
+              <div className="flex items-center gap-1.5 sm:gap-2 2xl:gap-3">
                 <Link
                   href="/auth/login"
-                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 text-xs sm:text-sm md:text-sm overflow-hidden border border-blue-400/30 whitespace-nowrap"
+                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 text-xs sm:text-sm md:text-sm overflow-hidden border border-blue-400/30 whitespace-nowrap"
                 >
                   <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
                   <svg className="hidden sm:inline-block w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -217,17 +217,17 @@ export default function Navigation() {
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-5 sm:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95 whitespace-nowrap"
+                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-3 xl:px-4 2xl:px-5 py-2 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95 whitespace-nowrap"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                   <span className="tracking-wide">{t('register')}</span>
                 </Link>
               </div>
             ) : (
-              <div className="hidden xl:flex items-center gap-1 sm:gap-2 md:gap-3">
+              <div className="hidden xl:flex items-center gap-1.5 sm:gap-2 2xl:gap-3">
                 <Link
                   href={userRole === 'admin' ? '/admin' : '/account'}
-                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm flex items-center gap-1.5 shadow-md hover:shadow-green-500/30 hover:scale-105 whitespace-nowrap"
+                  className="px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm flex items-center gap-1.5 shadow-md hover:shadow-green-500/30 hover:scale-105 whitespace-nowrap"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -237,7 +237,7 @@ export default function Navigation() {
                 <button
                   onClick={handleLogout}
                   disabled={isLoggingOut}
-                  className="px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/30 hover:scale-105 whitespace-nowrap"
+                  className="px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/30 hover:scale-105 whitespace-nowrap"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />

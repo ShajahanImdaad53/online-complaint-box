@@ -3,6 +3,7 @@ import connectDB from "@/app/lib/mongodb";
 import Complaint from "@/models/Complaint";
 import cloudinary from "@/app/lib/cloudinary";
 import { verifyToken } from "@/app/lib/jwt";
+import { appendToSheet } from "@/app/lib/googleSheets";
 
 export async function POST(req) {
   try {
@@ -84,6 +85,21 @@ export async function POST(req) {
     });
 
     await newComplaint.save();
+
+    // ✅ Append to Google Sheets
+    // Await this so Vercel doesn't kill the function before it finishes
+    const sheetData = [
+      newComplaint._id.toString(),
+      new Date().toLocaleString(),
+      user.userId.toString(),
+      title,
+      category,
+      address,
+      description,
+      `${lat}, ${lng}`,
+      uploadedImages.join('\n')
+    ];
+    await appendToSheet(sheetData);
 
     return NextResponse.json(
       {
