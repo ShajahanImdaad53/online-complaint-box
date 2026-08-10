@@ -205,45 +205,45 @@ export default function Navigation() {
             )}
  
             {!isUser ? (
-              <div className="flex items-center gap-1.5 sm:gap-2 2xl:gap-3">
+              <div className="flex items-center gap-1 sm:gap-1.5 2xl:gap-2">
                 <Link
                   href="/auth/login"
-                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 text-xs sm:text-sm md:text-sm overflow-hidden border border-blue-400/30 whitespace-nowrap"
+                  className="hidden lg:inline-flex group relative items-center gap-1.5 px-2.5 lg:px-3 xl:px-4 py-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:via-indigo-500 hover:to-cyan-400 text-white font-black rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50 hover:scale-105 active:scale-95 text-xs sm:text-sm overflow-hidden border border-blue-400/30"
                 >
                   <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
-                  <svg className="hidden sm:inline-block w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="hidden xl:inline-block w-4 h-4 group-hover:rotate-12 transition-transform flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 16l-4-4m0 0l-4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                   </svg>
-                  <span className="tracking-wide">{t('signIn')}</span>
+                  <span className="tracking-wide text-center leading-tight">{t('signIn')}</span>
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="hidden xl:inline-flex group relative items-center gap-1.5 px-3 xl:px-4 2xl:px-5 py-2 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95 whitespace-nowrap"
+                  className="hidden lg:inline-flex group relative items-center gap-1.5 px-2.5 lg:px-3 xl:px-4 py-2 bg-gray-900/10 dark:bg-white/10 hover:bg-gray-900/20 dark:hover:bg-white/20 backdrop-blur-md border border-gray-300 dark:border-white/20 hover:border-blue-500 dark:hover:border-cyan-400 text-gray-900 dark:text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm shadow-sm hover:shadow-md hover:scale-105 active:scale-95"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span className="tracking-wide">{t('register')}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"></span>
+                  <span className="tracking-wide text-center leading-tight">{t('register')}</span>
                 </Link>
               </div>
             ) : (
-              <div className="hidden xl:flex items-center gap-1.5 sm:gap-2 2xl:gap-3">
+              <div className="hidden lg:flex items-center gap-1 sm:gap-1.5 2xl:gap-2">
                 <Link
                   href={userRole === 'admin' ? '/admin' : '/account'}
-                  className="px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm flex items-center gap-1.5 shadow-md hover:shadow-green-500/30 hover:scale-105 whitespace-nowrap"
+                  className="px-2.5 lg:px-3 xl:px-4 py-2 bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 shadow-md hover:shadow-green-500/30 hover:scale-105"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  <span>{userRole === 'admin' ? t('dashboard') : t('profile')}</span>
+                  <span className="text-center leading-tight">{userRole === 'admin' ? t('dashboard') : t('profile')}</span>
                 </Link>
                 <button
                   onClick={handleLogout}
                   disabled={isLoggingOut}
-                  className="px-3 xl:px-4 2xl:px-5 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm md:text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/30 hover:scale-105 whitespace-nowrap"
+                  className="px-2.5 lg:px-3 xl:px-4 py-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold rounded-full transition-all duration-300 text-xs sm:text-sm disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-md hover:shadow-red-500/30 hover:scale-105"
                 >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                   </svg>
-                  <span>{isLoggingOut ? t('loggingOut') : t('logout')}</span>
+                  <span className="text-center leading-tight">{isLoggingOut ? t('loggingOut') : t('logout')}</span>
                 </button>
               </div>
             )}
