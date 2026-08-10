@@ -107,9 +107,9 @@ export default function Navigation() {
               height={40}
               className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl shadow-md border border-gray-200 dark:border-gray-800"
             />
-            <div className="text-left">
-              <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-black text-gray-900 dark:text-white leading-tight tracking-tight whitespace-nowrap">{t('title')}</h1>
-              <p className="text-xs sm:text-xs md:text-sm text-blue-600 dark:text-blue-400 font-semibold">{t('subtitle')}</p>
+            <div className="text-left flex flex-col justify-center max-w-[120px] sm:max-w-none">
+              <h1 className="text-xs sm:text-sm md:text-lg lg:text-xl font-black text-gray-900 dark:text-white leading-tight tracking-tight truncate sm:whitespace-nowrap">{t('title')}</h1>
+              <p className="text-[10px] sm:text-xs md:text-sm text-blue-600 dark:text-blue-400 font-semibold truncate sm:whitespace-nowrap">{t('subtitle')}</p>
             </div>
           </Link>
 
@@ -142,11 +142,12 @@ export default function Navigation() {
                   onClick={() => setLangMenuOpen(!langMenuOpen)}
                   aria-label="Select Language"
                   title="Switch Language (English / Tamil / Sinhala)"
-                  className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold transition-all shadow-inner hover:scale-105 active:scale-95 focus:outline-none"
+                  className="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 py-1 sm:py-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 border border-gray-300 dark:border-white/10 text-gray-800 dark:text-gray-200 text-xs sm:text-sm font-bold transition-all shadow-inner hover:scale-105 active:scale-95 focus:outline-none"
                 >
-                  <span className="text-sm sm:text-base leading-none">🌐</span>
-                  <span>{lang === 'ta' ? 'தமிழ்' : lang === 'si' ? 'සිංහල' : 'EN'}</span>
-                  <svg className={`w-3 sm:w-3.5 h-3 sm:h-3.5 transition-transform duration-200 ${langMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-xs sm:text-base leading-none">🌐</span>
+                  <span className="hidden sm:inline">{lang === 'ta' ? 'தமிழ்' : lang === 'si' ? 'සිංහල' : 'EN'}</span>
+                  <span className="sm:hidden">{lang === 'ta' ? 'TA' : lang === 'si' ? 'SI' : 'EN'}</span>
+                  <svg className={`w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform duration-200 ${langMenuOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
@@ -185,14 +186,14 @@ export default function Navigation() {
                 onClick={toggleTheme}
                 aria-label="Toggle Theme"
                 title={theme === 'dark' ? 'Switch to Day Mode' : 'Switch to Night Mode'}
-                className="relative inline-flex items-center h-8 sm:h-9 w-15 sm:w-16 rounded-full p-1 transition-all duration-500 bg-gray-200 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border border-gray-300 dark:border-indigo-500/40 shadow-inner hover:scale-105 active:scale-95 group focus:outline-none flex-shrink-0"
+                className="relative inline-flex items-center h-7 sm:h-9 w-12 sm:w-16 rounded-full p-1 transition-all duration-500 bg-gray-200 dark:bg-gradient-to-r dark:from-indigo-950 dark:via-purple-950 dark:to-slate-900 border border-gray-300 dark:border-indigo-500/40 shadow-inner hover:scale-105 active:scale-95 group focus:outline-none flex-shrink-0"
               >
                 {/* Sliding indicator thumb */}
-                <span className={`absolute flex items-center justify-center w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-white dark:bg-gradient-to-tr dark:from-indigo-500 dark:to-purple-500 shadow-md transform transition-transform duration-500 ease-out ${theme === 'dark' ? 'translate-x-7 sm:translate-x-8 text-white' : 'translate-x-0 text-amber-500'}`}>
+                <span className={`absolute flex items-center justify-center w-5 sm:w-7 h-5 sm:h-7 rounded-full bg-white dark:bg-gradient-to-tr dark:from-indigo-500 dark:to-purple-500 shadow-md transform transition-transform duration-500 ease-out ${theme === 'dark' ? 'translate-x-5 sm:translate-x-8 text-white' : 'translate-x-0 text-amber-500'}`}>
                   {theme === 'dark' ? (
-                    <span className="text-[11px] sm:text-[13px] leading-none">🌙</span>
+                    <span className="text-[10px] sm:text-[13px] leading-none">🌙</span>
                   ) : (
-                    <span className="text-[11px] sm:text-[13px] leading-none">☀️</span>
+                    <span className="text-[10px] sm:text-[13px] leading-none">☀️</span>
                   )}
                 </span>
                 {/* Background icons inside track */}
