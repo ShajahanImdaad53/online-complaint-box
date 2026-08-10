@@ -19,17 +19,20 @@ The **Online Complaint Box** is a comprehensive web application designed to brid
 
 ## ✨ Key Features
 
-- 🌍 **Multi-Language Support**: Accessible to a wider audience with built-in support for multiple languages (English, Sinhala, Tamil).
+- 🌍 **Multi-Language Support**: Accessible to a wider audience with built-in support for multiple languages (English, Sinhala, Tamil) with responsive typography logic.
 - 📱 **WhatsApp Integration**: Instant notifications and updates routed directly via WhatsApp for lightning-fast communication.
 - 🎨 **Modern UI/UX**: A stunning, fully responsive interface utilizing glassmorphism, premium 3D illustrations, and smooth micro-animations.
 - ⚡ **Fast Processing**: Streamlined complaint submission form designed to take less than a minute to complete.
 - 🔒 **Secure & Confidential**: User data and sensitive complaints are handled with top-tier security and privacy measures.
 - 📊 **Track Progress**: Users can easily track the status of their complaints in real-time.
+- 📝 **Google Sheets Integration**: Every submitted complaint is automatically and instantly synced to a secure Google Spreadsheet for administrative tracking and record-keeping.
 
 ## 🛠️ Technology Stack
 
 - **Framework:** [Next.js](https://nextjs.org/) (React)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first, responsive design
+- **Database:** MongoDB Atlas (Cloud)
+- **APIs:** Google Sheets API (for syncing data), Cloudinary (for image hosting)
 - **Icons & Assets:** Custom generated premium 3D assets and responsive UI components
 
 ## 🚀 Getting Started
