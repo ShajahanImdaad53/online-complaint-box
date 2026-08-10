@@ -8,7 +8,8 @@
   [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-  [![Live Demo](https://img.shields.io/badge/Live_Demo-0052FF?style=for-the-badge)](https://online-complaint-box.vercel.app/)
+  [![User Site](https://img.shields.io/badge/User_Site-0052FF?style=for-the-badge)](https://online-complaint-box.vercel.app/)
+  [![Admin Portal](https://img.shields.io/badge/Admin_Portal-FF0000?style=for-the-badge)](https://online-complaint-box.vercel.app/admin)
 
 </div>
 
