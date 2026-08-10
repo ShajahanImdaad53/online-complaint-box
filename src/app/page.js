@@ -673,88 +673,73 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Colorful Contact Cards Grid */}
+          {/* Image-Based Contact Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 sm:mb-20">
             {/* Phone Card */}
-            <div className="group relative bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 rounded-3xl p-6 sm:p-7 border border-blue-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-blue-600/20 flex flex-col justify-between overflow-hidden text-white">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
-              <div>
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-black mb-1">{t('telHotline') || "Telephone Hotline"}</h3>
-                <p className="text-blue-100 font-bold text-base mb-1">+94 (0) XXX XXX XXXX</p>
-                <p className="text-blue-200/80 text-xs">{t('monSatHours') || "Mon-Sat, 8:00 AM - 5:00 PM"}</p>
+            <div className="group relative rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-blue-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-end overflow-hidden min-h-[280px]">
+              <img src="/images/contact_phone_new.png" alt="Telephone" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+              
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-black mb-1 drop-shadow-md">{t('telHotline') || "Telephone Hotline"}</h3>
+                <p className="text-blue-400 font-bold text-lg mb-1 drop-shadow-md">+94 (0) XXX XXX XXXX</p>
+                <p className="text-gray-300 text-xs mb-4 drop-shadow-md">{t('monSatHours') || "Mon-Sat, 8:00 AM - 5:00 PM"}</p>
+                
+                <a href="tel:+94" className="pt-3 border-t border-white/20 font-extrabold text-xs inline-flex items-center justify-between w-full group/link transition-colors hover:text-blue-400">
+                  <span>{t('callHotline') || "CALL HOTLINE"}</span>
+                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform backdrop-blur-md">→</span>
+                </a>
               </div>
-              <a href="tel:+94" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>{t('callHotline') || "CALL HOTLINE"}</span>
-                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
             </div>
 
             {/* Email Card */}
-            <div className="group relative bg-gradient-to-br from-purple-600 via-fuchsia-600 to-pink-600 rounded-3xl p-6 sm:p-7 border border-purple-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-purple-600/20 flex flex-col justify-between overflow-hidden text-white">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
-              <div>
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-black mb-1">{t('emailDispatch') || "Email Dispatch"}</h3>
-                <p className="text-purple-100 font-bold text-base mb-1 break-all">info@pradeshya.lk</p>
-                <p className="text-purple-200/80 text-xs">{t('guaranteed24') || "24-Hour Response Guaranteed"}</p>
+            <div className="group relative rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-purple-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-end overflow-hidden min-h-[280px]">
+              <img src="/images/contact_email_new.png" alt="Email" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+              
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-black mb-1 drop-shadow-md">{t('emailDispatch') || "Email Dispatch"}</h3>
+                <p className="text-purple-400 font-bold text-lg mb-1 break-all drop-shadow-md">info@pradeshya.lk</p>
+                <p className="text-gray-300 text-xs mb-4 drop-shadow-md">{t('guaranteed24') || "24-Hour Response Guaranteed"}</p>
+                
+                <a href="mailto:info@pradeshya.lk" className="pt-3 border-t border-white/20 font-extrabold text-xs inline-flex items-center justify-between w-full group/link transition-colors hover:text-purple-400">
+                  <span>{t('sendMessage') || "SEND MESSAGE"}</span>
+                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform backdrop-blur-md">→</span>
+                </a>
               </div>
-              <a href="mailto:info@pradeshya.lk" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>{t('sendMessage') || "SEND MESSAGE"}</span>
-                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
             </div>
 
             {/* Location Card */}
-            <div className="group relative bg-gradient-to-br from-rose-600 via-red-600 to-amber-600 rounded-3xl p-6 sm:p-7 border border-rose-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-rose-600/20 flex flex-col justify-between overflow-hidden text-white">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
-              <div>
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-black mb-1">{t('headquarters') || "Headquarters"}</h3>
-                <p className="text-rose-100 font-bold text-base mb-1">{t('secOffice') || "Pradeshiya Sabha Office"}</p>
-                <p className="text-rose-200/80 text-xs">{t('slAddressShort') || "Addalachenai, Sri Lanka"}</p>
+            <div className="group relative rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-rose-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-end overflow-hidden min-h-[280px]">
+              <img src="/images/contact_location_new.png" alt="Location" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+              
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-black mb-1 drop-shadow-md">{t('headquarters') || "Headquarters"}</h3>
+                <p className="text-rose-400 font-bold text-lg mb-1 drop-shadow-md">{t('secOffice') || "Pradeshiya Sabha Office"}</p>
+                <p className="text-gray-300 text-xs mb-4 drop-shadow-md">{t('slAddressShort') || "Addalachenai, Sri Lanka"}</p>
+                
+                <a href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7" target="_blank" rel="noopener noreferrer" className="pt-3 border-t border-white/20 font-extrabold text-xs inline-flex items-center justify-between w-full group/link transition-colors hover:text-rose-400">
+                  <span>{t('viewMaps') || "VIEW ON MAPS"}</span>
+                  <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform backdrop-blur-md">→</span>
+                </a>
               </div>
-              <a href="https://maps.app.goo.gl/sQSgHAfeEwF8XmrY7" target="_blank" rel="noopener noreferrer" className="mt-5 pt-3 border-t border-white/20 text-white font-extrabold text-xs inline-flex items-center justify-between group/link transition-colors">
-                <span>{t('viewMaps') || "VIEW ON MAPS"}</span>
-                <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
             </div>
 
             {/* Hours Card */}
-            <div className="group relative bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 rounded-3xl p-6 sm:p-7 border border-emerald-400/30 hover:border-white transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-emerald-600/20 flex flex-col justify-between overflow-hidden text-white">
-              <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-xl group-hover:bg-white/20 transition-all duration-500"></div>
-              <div>
-                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-inner border border-white/30">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            <div className="group relative rounded-3xl p-6 sm:p-7 border border-white/10 hover:border-emerald-500/50 shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-end overflow-hidden min-h-[280px]">
+              <img src="/images/contact_hours_new.png" alt="Hours" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
+              
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-black mb-1 drop-shadow-md">{t('workingHours') || "Working Hours"}</h3>
+                <p className="text-emerald-400 font-bold text-lg mb-1 drop-shadow-md">{t('monFriHours') || "Mon-Fri: 8AM - 5PM"}</p>
+                <p className="text-gray-300 text-xs mb-4 drop-shadow-md">{t('emergencyDesk247') || "Emergency Desk: 24/7"}</p>
+                
+                <div className="pt-3 border-t border-white/20 font-extrabold text-xs inline-flex items-center justify-between w-full group/link transition-colors cursor-default">
+                  <span>{t('openNow') || "● OPEN NOW"}</span>
+                  <span className="w-auto px-2 h-6 rounded-full bg-white/20 flex items-center justify-center font-bold backdrop-blur-md">GMT+5:30</span>
                 </div>
-                <h3 className="text-lg font-black mb-1">{t('workingHours') || "Working Hours"}</h3>
-                <p className="text-emerald-100 font-bold text-base mb-1">{t('monFriHours') || "Mon-Fri: 8AM - 5PM"}</p>
-                <p className="text-emerald-200/80 text-xs">{t('emergencyDesk247') || "Emergency Desk: 24/7"}</p>
-              </div>
-              <div className="mt-5 pt-3 border-t border-white/20 flex items-center justify-between">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-extrabold bg-white/20 text-white border border-white/30">
-                  <span className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></span>
-                  {t('openNow') || "OPEN NOW"}
-                </span>
-                <span className="text-xs text-emerald-100 font-bold">GMT+5:30</span>
               </div>
             </div>
           </div>
