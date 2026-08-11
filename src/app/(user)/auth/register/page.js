@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 // import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
+
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -82,7 +82,7 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-[#05070c] transition-colors duration-300">
-      {/* <Navigation /> */}
+
       
       <main className="flex-grow flex items-center justify-center px-3 sm:px-4 py-8 sm:py-12 bg-gradient-to-br from-gray-50 via-white to-green-50 dark:from-[#05070c] dark:via-[#090d16] dark:to-black transition-colors duration-300">
         <div className="w-full max-w-6xl">
@@ -320,7 +320,7 @@ export default function RegisterPage() {
         </div>
       </section>
       
-      <Footer />
+
     </div>
   );
 }

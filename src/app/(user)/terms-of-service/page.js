@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Footer from '../components/Footer';
+
 
 export default function TermsOfService() {
   const router = useRouter();
@@ -241,7 +241,7 @@ export default function TermsOfService() {
         </div>
       </div>
 
-      <Footer />
+
     </div>
   );
 }

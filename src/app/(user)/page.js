@@ -3,11 +3,11 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
+
+
 import { useAuthCheck } from '@/lib/hooks';
 import { SERVICES, ROUTES, API_ENDPOINTS, TIMING } from '@/lib/constants';
-import { useLanguage } from './components/LanguageProvider';
+import { useLanguage } from '../components/LanguageProvider';
 
 export default function Home() {
   const router = useRouter();
@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#07090e] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
-      <Navigation />
+
 
       {/* Hero Section */}
       <section 
@@ -844,7 +844,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <Footer />
+
     </div>
   );
 }

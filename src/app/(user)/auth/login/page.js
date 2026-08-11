@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 import LoginContent from './login-content';
-import Footer from '../../components/Footer';
+
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -41,7 +41,7 @@ export default function LoginPage() {
         </div>
       </section>
       
-      <Footer />
+
     </div>
   );
 }

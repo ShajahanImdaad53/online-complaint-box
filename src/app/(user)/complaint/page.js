@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Footer from '../components/Footer';
+
 
 export default function MyComplaints() {
   const router = useRouter();
@@ -322,7 +322,7 @@ export default function MyComplaints() {
           </Link>
         </div>
 
-        <Footer />
+
 
     </div>
   );

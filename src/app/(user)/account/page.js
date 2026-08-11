@@ -5,8 +5,8 @@ export const dynamic = 'force-dynamic';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+
+
 
 export default function UserDashboard() {
   const router = useRouter();
@@ -421,7 +421,7 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex flex-col">
-      {/* <Navigation /> */}
+
 
       {/* Header */}
       <header className="bg-white border-b border-gray-200">
@@ -471,7 +471,7 @@ export default function UserDashboard() {
         </div>
       </main>
 
-      <Footer />
+
     </div>
   );
 }

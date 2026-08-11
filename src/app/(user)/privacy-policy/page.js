@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Footer from '../components/Footer';
+
 
 export default function PrivacyPolicy() {
   const router = useRouter();
@@ -220,7 +220,7 @@ export default function PrivacyPolicy() {
         </div>
       </div>
 
-      <Footer />
+
     </div>
   );
 }

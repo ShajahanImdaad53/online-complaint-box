@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
+
+
 
 export default function ViewProfilePage() {
   const router = useRouter();
@@ -67,7 +67,7 @@ export default function ViewProfilePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      <Navigation />
+
       
       <main className="flex-grow py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
@@ -191,7 +191,7 @@ export default function ViewProfilePage() {
         </div>
       </main>
 
-      <Footer />
+
     </div>
   );
 }
