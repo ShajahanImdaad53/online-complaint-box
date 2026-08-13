@@ -41,8 +41,21 @@ The **Online Complaint Box** is a comprehensive web application designed to brid
 <summary><b>🛠️ Technology Stack</b></summary>
 <br>
 
-- **Framework:** [Next.js](https://nextjs.org/) (React)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) for utility-first, responsive design
+<div align="center">
+  <br />
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" /></a>
+  <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" /></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /></a>
+  <br />
+  <a href="https://www.mongodb.com/cloud/atlas"><img src="https://img.shields.io/badge/MongoDB_Atlas-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Atlas" /></a>
+  <a href="https://developers.google.com/sheets/api"><img src="https://img.shields.io/badge/Google_Sheets_API-34A853?style=for-the-badge&logo=googlesheets&logoColor=white" alt="Google Sheets" /></a>
+  <a href="https://cloudinary.com/"><img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary" /></a>
+  <br />
+  <br />
+</div>
+
+- **Framework:** Next.js (React)
+- **Styling:** Tailwind CSS for utility-first, responsive design
 - **Database:** MongoDB Atlas (Cloud)
 - **APIs:** Google Sheets API (for syncing data), Cloudinary (for image hosting)
 - **Icons & Assets:** Custom generated premium 3D assets and responsive UI components
