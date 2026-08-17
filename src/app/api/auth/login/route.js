@@ -67,7 +67,7 @@ return response;
      } catch (error) {
         console.error("Login error:", error);
         return NextResponse.json(
-            {message: "Internal server error"},
+            {message: error.message || "Internal server error"},
             {status: 500}
         );
      }
