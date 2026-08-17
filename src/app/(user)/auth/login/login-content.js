@@ -54,7 +54,10 @@ export default function LoginContent() {
 
       // Determine the redirect URL
       let redirectUrl = '/';
-      if (redirectParam) {
+      if (data.role === 'admin') {
+        redirectUrl = '/admin';
+        console.log('🎯 Redirecting to admin dashboard');
+      } else if (redirectParam) {
         redirectUrl = decodeURIComponent(redirectParam);
         console.log('🎯 Redirecting to:', redirectUrl);
       } else {
