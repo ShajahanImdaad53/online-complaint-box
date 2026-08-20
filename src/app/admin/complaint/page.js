@@ -25,7 +25,6 @@ export default function ManageComplaintsPage() {
   }, []);
 
   useEffect(() => {
-    // When filters change, reset to page 1
     setCurrentPage(1);
   }, [filterStatus, searchTerm, sortBy]);
 
@@ -93,26 +92,42 @@ export default function ManageComplaintsPage() {
   const getStatusColor = (status) => {
     switch (status) {
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-300';
+        return 'bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-400 border-amber-300 dark:border-amber-500/30';
       case 'approved':
-        return 'bg-green-100 text-green-800 border-green-300';
+        return 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-800 dark:text-emerald-400 border-emerald-300 dark:border-emerald-500/30';
       case 'rejected':
-        return 'bg-red-100 text-red-800 border-red-300';
+        return 'bg-red-100 dark:bg-red-500/20 text-red-800 dark:text-red-400 border-red-300 dark:border-red-500/30';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-300';
+        return 'bg-gray-100 dark:bg-gray-500/20 text-gray-800 dark:text-gray-400 border-gray-300 dark:border-gray-500/30';
     }
   };
 
   const getStatusIcon = (status) => {
     switch (status) {
       case 'pending':
-        return '⏳';
+        return (
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        );
       case 'approved':
-        return '✅';
+        return (
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+          </svg>
+        );
       case 'rejected':
-        return '❌';
+        return (
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        );
       default:
-        return '📋';
+        return (
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        );
     }
   };
 
@@ -123,76 +138,102 @@ export default function ManageComplaintsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-blue-200 border-t-blue-600 mb-4"></div>
-          <p className="text-gray-600 text-lg font-semibold">Loading complaints...</p>
+      <div className="min-h-screen bg-white dark:bg-[#07090e] flex items-center justify-center transition-colors duration-300">
+        <div className="text-center animate-fade-in">
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-blue-200 dark:border-blue-900 border-t-blue-600 dark:border-t-blue-500 mb-6 shadow-lg"></div>
+          <p className="text-gray-900 dark:text-white text-lg font-bold tracking-wide">Loading complaints...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-    
+    <div className="min-h-screen bg-white dark:bg-[#07090e] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-0 left-1/4 w-[800px] h-[500px] bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-[800px] h-[500px] bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-[140px] pointer-events-none"></div>
 
-      <main className="flex-grow py-8 sm:py-12 px-3 sm:px-4 md:px-6 lg:px-8">
+      <main className="flex-grow py-8 sm:py-12 px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="mb-6 sm:mb-8">
-            <Link href="/admin" className="text-blue-600 hover:text-blue-700 font-semibold mb-3 sm:mb-4 inline-flex items-center gap-2 text-xs sm:text-sm">
-              ← Back to Dashboard
+          <div className="mb-8 sm:mb-12 animate-fade-in-down">
+            <Link href="/admin" className="group inline-flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-gray-800/50 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-full shadow-sm mb-6 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all text-sm font-semibold text-gray-600 dark:text-gray-300">
+              <span className="group-hover:-translate-x-1 transition-transform">←</span> Back to Dashboard
             </Link>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">Manage Complaints</h1>
-            <p className="text-xs sm:text-base text-gray-600">Review and manage all citizen complaints</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Manage Complaints</h1>
+            <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base font-medium">Review, filter, and update citizen complaints.</p>
           </div>
 
           {error && (
-            <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 sm:p-6 rounded-lg mb-6 sm:mb-8 text-xs sm:text-sm">
-              <p className="font-semibold">{error}</p>
+            <div className="bg-red-50/80 dark:bg-red-900/30 backdrop-blur-md border border-red-200 dark:border-red-500/30 text-red-700 dark:text-red-400 p-4 rounded-2xl mb-8 shadow-sm">
+              <p className="font-medium text-sm">{error}</p>
             </div>
           )}
 
-          {/* Statistics */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
-            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-4 border-blue-600">
-              <p className="text-gray-600 text-xs sm:text-sm font-semibold uppercase mb-2">Total</p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">{totalComplaints}</p>
+          {/* Statistics Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200/80 dark:border-gray-800 p-6 hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1 group">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Total</p>
+                <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                </div>
+              </div>
+              <p className="text-4xl font-black text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{totalComplaints}</p>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-4 border-yellow-500">
-              <p className="text-gray-600 text-xs sm:text-sm font-semibold uppercase mb-2">Pending</p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-600">{complaints.filter((c) => c.status === 'pending').length}</p>
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200/80 dark:border-gray-800 p-6 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1 group">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Pending</p>
+                <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+              </div>
+              <p className="text-4xl font-black text-amber-600 dark:text-amber-400 group-hover:text-amber-500 transition-colors">{complaints.filter((c) => c.status === 'pending').length}</p>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-4 border-green-600">
-              <p className="text-gray-600 text-xs sm:text-sm font-semibold uppercase mb-2">Approved</p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600">{complaints.filter((c) => c.status === 'approved').length}</p>
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200/80 dark:border-gray-800 p-6 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1 group">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Approved</p>
+                <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                </div>
+              </div>
+              <p className="text-4xl font-black text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors">{complaints.filter((c) => c.status === 'approved').length}</p>
             </div>
-            <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 border-t-4 border-red-600">
-              <p className="text-gray-600 text-xs sm:text-sm font-semibold uppercase mb-2">Rejected</p>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600">{complaints.filter((c) => c.status === 'rejected').length}</p>
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200/80 dark:border-gray-800 p-6 hover:border-red-500/50 transition-all duration-500 hover:shadow-xl dark:shadow-none hover:-translate-y-1 group">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-gray-500 dark:text-gray-400 text-xs font-bold uppercase tracking-wider">Rejected</p>
+                <div className="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-500/20 text-red-600 dark:text-red-400 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+              </div>
+              <p className="text-4xl font-black text-red-600 dark:text-red-400 group-hover:text-red-500 transition-colors">{complaints.filter((c) => c.status === 'rejected').length}</p>
             </div>
           </div>
 
           {/* Filters */}
-          <div className="bg-white rounded-2xl shadow-lg p-5 sm:p-6 md:p-8 mb-6 sm:mb-8">
-            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6">Filters & Search</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-3xl border border-gray-200/80 dark:border-gray-800 p-6 sm:p-8 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center gap-3 mb-6">
+              <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Filters & Search</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div>
-                <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">Search by Title, Category, or Address</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Search</label>
                 <input
                   type="text"
-                  placeholder="Search complaints..."
+                  placeholder="Title, Category, Address..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-xs sm:text-sm"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-white transition-all text-sm shadow-sm"
                 />
               </div>
               <div>
-                <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3">Filter by Status</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Status</label>
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors text-xs sm:text-sm"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-white transition-all text-sm appearance-none shadow-sm cursor-pointer"
                 >
                   <option value="all">All Statuses</option>
                   <option value="pending">Pending</option>
@@ -201,11 +242,11 @@ export default function ManageComplaintsPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-3">Sort By</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Sort</label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:text-white transition-all text-sm appearance-none shadow-sm cursor-pointer"
                 >
                   <option value="recent">Most Recent</option>
                   <option value="oldest">Oldest First</option>
@@ -215,47 +256,58 @@ export default function ManageComplaintsPage() {
           </div>
 
           {/* Complaints List */}
-          <div className="space-y-4 mb-8 mt-10 ">
+          <div className="space-y-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             {filteredComplaints.length === 0 ? (
-              <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-                <p className="text-gray-600 text-xl mb-2">No complaints found</p>
-                <p className="text-gray-500">Try adjusting your filters or search terms</p>
+              <div className="bg-white/50 dark:bg-gray-900/40 backdrop-blur-sm rounded-3xl border border-dashed border-gray-300 dark:border-gray-700 p-16 text-center">
+                <svg className="w-12 h-12 text-gray-400 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <p className="text-gray-600 dark:text-gray-400 text-lg font-bold">No complaints found</p>
+                <p className="text-gray-500 dark:text-gray-500 text-sm mt-2">Adjust your filters or search term to see more results.</p>
               </div>
             ) : (
               filteredComplaints.map((complaint) => (
-                <Link key={complaint._id} href={`/admin/complaint/${complaint._id}`}>
-                  <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 cursor-pointer border-l-4 border-blue-600 hover:scale-[1.02] transform mt-10">
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center">
+                <Link key={complaint._id} href={`/admin/complaint/${complaint._id}`} className="block group">
+                  <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-200/80 dark:border-gray-800 p-6 sm:p-8 hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl dark:shadow-none hover:-translate-y-1 relative overflow-hidden">
+                    
+                    {/* Subtle status glow indicator */}
+                    <div className={`absolute top-0 left-0 w-1.5 h-full ${
+                      complaint.status === 'pending' ? 'bg-amber-400' :
+                      complaint.status === 'approved' ? 'bg-emerald-400' : 'bg-red-400'
+                    }`}></div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center pl-2">
                       {/* Title & ID */}
                       <div className="md:col-span-2">
-                        <p className="text-gray-500 text-xs font-semibold uppercase mb-2">Complaint Title</p>
-                        <p className="text-gray-900 font-bold text-lg line-clamp-2 mb-2">{complaint.title}</p>
-                        <p className="text-gray-400 text-xs">ID: {complaint._id.toString().slice(-8).toUpperCase()}</p>
+                        <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 flex items-center gap-1">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" /></svg>
+                          ID: {complaint._id.toString().slice(-8).toUpperCase()}
+                        </p>
+                        <h4 className="text-gray-900 dark:text-white font-black text-lg line-clamp-2 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{complaint.title}</h4>
                       </div>
 
                       {/* Category */}
                       <div>
-                        <p className="text-gray-500 text-xs font-semibold uppercase mb-2">Category</p>
-                        <p className="text-gray-900 font-semibold">{complaint.category}</p>
+                        <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Category</p>
+                        <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm bg-gray-100 dark:bg-gray-800 inline-block px-3 py-1 rounded-md">{complaint.category}</p>
                       </div>
 
                       {/* Status */}
                       <div>
-                        <p className="text-gray-500 text-xs font-semibold uppercase mb-2">Status</p>
-                        <span className={`inline-block px-4 py-2 rounded-full font-bold text-sm border ${getStatusColor(complaint.status)}`}>
-                          {getStatusIcon(complaint.status)} {complaint.status.charAt(0).toUpperCase() + complaint.status.slice(1)}
+                        <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Status</p>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full font-bold text-xs border ${getStatusColor(complaint.status)}`}>
+                          {getStatusIcon(complaint.status)}
+                          <span>{complaint.status.charAt(0).toUpperCase() + complaint.status.slice(1)}</span>
                         </span>
                       </div>
 
                       {/* Date & Action */}
-                      <div className="flex flex-col items-end gap-3">
-                        <div>
-                          <p className="text-gray-500 text-xs font-semibold uppercase mb-2">Created</p>
-                          <p className="text-gray-900 font-semibold">{new Date(complaint.createdAt).toLocaleDateString()}</p>
+                      <div className="flex flex-col md:items-end gap-3">
+                        <div className="md:text-right">
+                          <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1.5">Submitted</p>
+                          <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">{new Date(complaint.createdAt).toLocaleDateString()}</p>
                         </div>
-                        <button className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg transition-all">
-                          View Details →
-                        </button>
+                        <span className="text-blue-600 dark:text-blue-400 font-bold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                          View Details <span>→</span>
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -266,55 +318,44 @@ export default function ManageComplaintsPage() {
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-gray-600 font-semibold">
-                  Page {currentPage} of {totalPages} ({totalComplaints} total complaints)
-                </p>
-                <div className="flex gap-2 flex-wrap justify-center sm:justify-end">
-                  <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all"
-                  >
-                    ← Previous
-                  </button>
-                  
-                  {/* Page Numbers */}
-                  <div className="flex gap-1">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={`px-3 py-2 rounded-lg font-bold transition-all ${
-                          currentPage === page
-                            ? 'bg-blue-600 text-white shadow-lg'
-                            : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all"
-                  >
-                    Next →
-                  </button>
+            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-gray-200/80 dark:border-gray-800 p-4 sm:p-6 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-gray-500 dark:text-gray-400 text-sm font-semibold">
+                Showing page <span className="text-gray-900 dark:text-white font-bold">{currentPage}</span> of <span className="text-gray-900 dark:text-white font-bold">{totalPages}</span>
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 transition-all text-sm shadow-sm"
+                >
+                  Prev
+                </button>
+                <div className="flex gap-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`w-9 h-9 flex items-center justify-center rounded-lg font-bold transition-all text-sm ${
+                        currentPage === page
+                          ? 'bg-blue-600 text-white shadow-md'
+                          : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm'
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
                 </div>
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 transition-all text-sm shadow-sm"
+                >
+                  Next
+                </button>
               </div>
             </div>
           )}
 
-          {/* Back Button */}
-          <div>
-            <Link href="/admin" className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              ← Back to Dashboard
-            </Link>
-          </div>
         </div>
       </main>
     </div>
