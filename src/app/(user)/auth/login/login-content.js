@@ -231,8 +231,8 @@ export default function LoginContent() {
           <div className="hidden md:block order-2 w-full max-w-md mx-auto md:mx-0">
             <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 dark:border-white/10 group">
               <Image
-                src="/images/about_civic.jpg"
-                alt="Civic Administration Office"
+                src="/images/login.png"
+                alt="Login illustration"
                 fill
                 priority
                 className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
