@@ -77,17 +77,22 @@ export default function LoginContent() {
   };
 
   return (
-    <main className="flex-grow flex items-center justify-center px-4 sm:px-6 py-12 lg:py-20 bg-gradient-to-br from-gray-50 via-gray-100 to-blue-50 dark:from-[#05070c] dark:via-[#090d16] dark:to-black transition-colors duration-300 relative overflow-hidden">
+    <main 
+      className="flex-grow flex items-center justify-center px-4 sm:px-6 py-12 lg:py-20 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)), url("/images/home.jpeg")'
+      }}
+    >
       {/* Background ambient light */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="w-full max-w-6xl relative z-10">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Left Side - Form Section */}
           <div className="order-1 w-full max-w-md mx-auto md:mx-0 md:ml-auto">
-            <div className="bg-white/80 dark:bg-gray-900/60 backdrop-blur-2xl border border-white/50 dark:border-white/10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-2xl p-8 sm:p-10 space-y-7 transition-all duration-300">
+            <div className="bg-white/90 dark:bg-gray-900/80 backdrop-blur-2xl border border-white/50 dark:border-white/10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-8 sm:p-10 space-y-7 transition-all duration-300">
               
               {/* Header */}
               <div className="text-left space-y-2">
@@ -213,7 +218,7 @@ export default function LoginContent() {
               <div className="text-center">
                 <Link 
                   href="/auth/register" 
-                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-gray-50 hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10 text-gray-700 dark:text-gray-200 font-bold rounded-2xl transition-colors text-sm sm:text-base border border-gray-200 dark:border-gray-800"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3.5 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800/80 text-gray-700 dark:text-gray-200 font-bold rounded-2xl transition-colors text-sm sm:text-base border border-gray-200 dark:border-gray-700"
                 >
                   Create an Account
                 </Link>
@@ -223,8 +228,8 @@ export default function LoginContent() {
           </div>
 
           {/* Right Side - Image Section */}
-          <div className="hidden md:block order-2 w-full max-w-lg mx-auto md:mx-0">
-            <div className="relative w-full aspect-[4/5] lg:aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 dark:border-white/10 group">
+          <div className="hidden md:block order-2 w-full max-w-md mx-auto md:mx-0">
+            <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl border border-white/20 dark:border-white/10 group">
               <Image
                 src="/images/about_civic.jpg"
                 alt="Civic Administration Office"
@@ -246,10 +251,10 @@ export default function LoginContent() {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold tracking-wide text-white mb-4 border border-white/30 shadow-lg">
                   <span className="text-blue-300">🏛️</span> Official Portal
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-3 drop-shadow-md">
+                <h3 className="text-3xl font-black text-white leading-tight mb-3 drop-shadow-md">
                   Digital Civic<br />Administration
                 </h3>
-                <p className="text-gray-200 text-sm lg:text-base font-medium drop-shadow leading-relaxed opacity-90">
+                <p className="text-gray-200 text-sm font-medium drop-shadow leading-relaxed opacity-90">
                   Secure access to your citizen dashboard. Report issues, track progress, and help build a better community.
                 </p>
               </div>
