@@ -5,9 +5,11 @@ export const dynamic = 'force-dynamic';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useTheme } from '../components/ThemeProvider';
 
 export default function AdminDashboard() {
   const router = useRouter();
+  const { theme, toggleTheme, mounted } = useTheme();
   const [adminUser, setAdminUser] = useState(null);
   const [complaints, setComplaints] = useState([]);
   const [users, setUsers] = useState([]);
@@ -119,12 +121,31 @@ export default function AdminDashboard() {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Admin Dashboard</h1>
                 <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base font-medium">Welcome back, {adminUser?.username || 'Admin'}!</p>
               </div>
-              <button
-                onClick={handleLogout}
-                className="group relative inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-2.5 sm:py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-500 hover:from-red-500 hover:via-rose-500 hover:to-red-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-red-500/40 hover:scale-105 active:scale-95 text-xs sm:text-sm border border-red-400/30 w-full sm:w-auto"
-              >
-                <span>Logout</span>
-              </button>
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                {mounted && (
+                  <button
+                    onClick={toggleTheme}
+                    className="p-2.5 sm:p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors shadow-sm"
+                    aria-label="Toggle Theme"
+                  >
+                    {theme === 'dark' ? (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                      </svg>
+                    )}
+                  </button>
+                )}
+                <button
+                  onClick={handleLogout}
+                  className="group relative inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-2.5 sm:py-3.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-500 hover:from-red-500 hover:via-rose-500 hover:to-red-400 text-white font-black rounded-full transition-all duration-300 shadow-xl hover:shadow-red-500/40 hover:scale-105 active:scale-95 text-xs sm:text-sm border border-red-400/30 flex-grow sm:flex-grow-0"
+                >
+                  <span>Logout</span>
+                </button>
+              </div>
             </div>
 
             {error && (
