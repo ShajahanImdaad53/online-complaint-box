@@ -134,7 +134,17 @@ const translations = {
     monFriHours: "Mon-Fri: 8AM - 5PM",
     emergencyDesk247: "Emergency Desk: 24/7",
     monFriSchedule: "08:00 AM - 05:00 PM",
-    satSchedule: "09:00 AM - 01:00 PM"
+    satSchedule: "09:00 AM - 01:00 PM",
+    activeGovernance: "Active Governance",
+    psAdministration: "Pradeshiya Sabha Administration",
+    digitalText: "Digital",
+    supportText: "Support",
+    fastText: "Fast",
+    resolutionText: "Resolution",
+    addalachenaiAdmin: "Addalachenai Administration",
+    digitalEra: "Digital Era",
+    citizenCentricLeadership: "Citizen-Centric Leadership",
+    empoweringTitle: "Empowering Addalachenai Through Next-Gen Digital Governance"
   },
   ta: {
     title: "பிரதேச சபை",
@@ -267,7 +277,17 @@ const translations = {
     monFriHours: "திங்கள்-வெள்ளி: 8AM - 5PM",
     emergencyDesk247: "அவசர பிரிவு: 24/7",
     monFriSchedule: "08:00 AM - 05:00 PM",
-    satSchedule: "09:00 AM - 01:00 PM"
+    satSchedule: "09:00 AM - 01:00 PM",
+    activeGovernance: "சுறுசுறுப்பான நிர்வாகம்",
+    psAdministration: "பிரதேச சபை நிர்வாகம்",
+    digitalText: "டிஜிட்டல்",
+    supportText: "ஆதரவு",
+    fastText: "துரித",
+    resolutionText: "தீர்வு",
+    addalachenaiAdmin: "அட்டாளைச்சேனை நிர்வாகம்",
+    digitalEra: "டிஜிட்டல் சகாப்தம்",
+    citizenCentricLeadership: "குடிமக்கள் மையப்படுத்திய தலைமைத்துவம்",
+    empoweringTitle: "அடுத்த தலைமுறை டிஜிட்டல் நிர்வாகத்தின் மூலம் அட்டாளைச்சேனையை வலுவூட்டல்"
   },
   si: {
     title: "ප්‍රාදේශීය සභාව",
@@ -400,7 +420,17 @@ const translations = {
     monFriHours: "සඳු-සිකු: 8AM - 5PM",
     emergencyDesk247: "හදිසි අංශය: 24/7",
     monFriSchedule: "08:00 AM - 05:00 PM",
-    satSchedule: "09:00 AM - 01:00 PM"
+    satSchedule: "09:00 AM - 01:00 PM",
+    activeGovernance: "සක්‍රීය පාලනය",
+    psAdministration: "ප්‍රාදේශීය සභා පරිපාලනය",
+    digitalText: "ඩිජිටල්",
+    supportText: "සහාය",
+    fastText: "වේගවත්",
+    resolutionText: "විසඳුම",
+    addalachenaiAdmin: "අඩ්ඩාලච්චේනයි පරිපාලනය",
+    digitalEra: "ඩිජිටල් යුගය",
+    citizenCentricLeadership: "පුරවැසි කේන්ද්‍රීය නායකත්වය",
+    empoweringTitle: "ඊළඟ පරම්පරාවේ ඩිජිටල් පාලනය හරහා අඩ්ඩාලච්චේනයි බලගැන්වීම"
   }
 };
 

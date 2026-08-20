@@ -136,8 +136,8 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
                     <div className="text-left">
-                      <span className="px-2.5 py-1 bg-blue-600/90 text-white text-[10px] font-bold rounded-full uppercase tracking-wider mb-1 inline-block shadow">Active Governance</span>
-                      <h3 className="text-white font-bold text-sm sm:text-base leading-snug">Pradeshiya Sabha Administration</h3>
+                      <span className="px-2.5 py-1 bg-blue-600/90 text-white text-[10px] font-bold rounded-full uppercase tracking-wider mb-1 inline-block shadow">{t('activeGovernance') || "Active Governance"}</span>
+                      <h3 className="text-white font-bold text-sm sm:text-base leading-snug">{t('psAdministration') || "Pradeshiya Sabha Administration"}</h3>
                     </div>
                   </div>
                 </div>
@@ -146,15 +146,15 @@ export default function Home() {
                 <div className="grid grid-cols-3 gap-2 text-center pt-2 border-t border-white/10">
                   <div className="p-2 rounded-xl bg-white/5">
                     <p className="text-cyan-400 font-black text-sm sm:text-base">100%</p>
-                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Digital</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">{t('digitalText') || "Digital"}</p>
                   </div>
                   <div className="p-2 rounded-xl bg-white/5">
                     <p className="text-emerald-400 font-black text-sm sm:text-base">24/7</p>
-                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Support</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">{t('supportText') || "Support"}</p>
                   </div>
                   <div className="p-2 rounded-xl bg-white/5">
-                    <p className="text-purple-400 font-black text-sm sm:text-base">Fast</p>
-                    <p className="text-[10px] text-gray-300 uppercase font-semibold">Resolution</p>
+                    <p className="text-purple-400 font-black text-sm sm:text-base">{t('fastText') || "Fast"}</p>
+                    <p className="text-[10px] text-gray-300 uppercase font-semibold">{t('resolutionText') || "Resolution"}</p>
                   </div>
                 </div>
               </div>
@@ -452,8 +452,8 @@ export default function Home() {
                   <img src="/images/about_civic.jpg" alt="Civic Collaboration" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wide">🏛️ Addalachenai Administration</span>
-                    <span className="text-xs font-semibold text-gray-200">Digital Era</span>
+                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-md rounded-full text-[11px] font-bold tracking-wide">🏛️ {t('addalachenaiAdmin') || "Addalachenai Administration"}</span>
+                    <span className="text-xs font-semibold text-gray-200">{t('digitalEra') || "Digital Era"}</span>
                   </div>
                 </div>
               </div>
@@ -461,10 +461,10 @@ export default function Home() {
               {/* Right Column: Council Overview */}
               <div className="lg:col-span-6 space-y-5 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-bold uppercase tracking-wider">
-                  <span>⚡ Citizen-Centric Leadership</span>
+                  <span>⚡ {t('citizenCentricLeadership') || "Citizen-Centric Leadership"}</span>
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-black leading-tight tracking-tight text-white">
-                  Empowering Addalachenai Through Next-Gen Digital Governance
+                  {t('empoweringTitle') || "Empowering Addalachenai Through Next-Gen Digital Governance"}
                 </h3>
                 <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-normal">
                   {t('aboutCouncilDesc') || "The Pradeshiya Sabha - Addalachenai is pioneering a new era of civic administration. By integrating transparent online complaint tracking, rapid dispatch teams, and active citizen participation, we ensure every voice is heard and every public issue is addressed with utmost integrity."}
