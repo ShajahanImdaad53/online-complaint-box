@@ -4,6 +4,8 @@ import Complaint from "@/models/Complaint";
 import cloudinary from "@/app/lib/cloudinary";
 import { verifyToken } from "@/app/lib/jwt";
 import { appendToSheet } from "@/app/lib/googleSheets";
+import User from "@/models/User";
+import { sendEmail } from "@/app/lib/mailer";
 
 export async function POST(req) {
   try {
@@ -100,6 +102,35 @@ export async function POST(req) {
       uploadedImages.join('\n')
     ];
     await appendToSheet(sheetData);
+
+    // ✅ Send Email Notification
+    try {
+      const fullUser = await User.findById(user.userId);
+      if (fullUser && fullUser.email) {
+        const emailHtml = `
+          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
+            <h2 style="color: #2563eb;">Complaint Received</h2>
+            <p>Dear ${fullUser.username || 'Citizen'},</p>
+            <p>We have successfully received your complaint regarding <strong>${title}</strong>.</p>
+            <p><strong>Complaint ID:</strong> ${newComplaint._id}</p>
+            <p><strong>Category:</strong> ${category}</p>
+            <p>Our team will review your submission and take necessary actions. You can track the status of your complaint in your dashboard.</p>
+            <br/>
+            <p>Thank you,</p>
+            <p>Pradeshiya Sabha Administration</p>
+          </div>
+        `;
+
+        await sendEmail({
+          to: fullUser.email,
+          subject: 'Complaint Submission Confirmation',
+          html: emailHtml,
+        });
+      }
+    } catch (emailError) {
+      console.error('Failed to send email notification:', emailError);
+      // We don't want to fail the whole request if just the email fails
+    }
 
     return NextResponse.json(
       {
