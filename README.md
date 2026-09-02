@@ -117,5 +117,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 <div align="center">
-  Made  by <a href="https://github.com/ShajahanImdaad53">Shajahan Imdaad</a>
+  Made  by Group 17
 </div>
