@@ -108,7 +108,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 </details>
 
 <details>
-<summary><b>🤝 Contributing</b></summary>
+<summary><b> 🤝 Contributing</b></summary>
 <br>
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/ShajahanImdaad53/online-complaint-box/issues).
