@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/images/feat_secure_confidential.png" alt="Logo" width="120" />
   
-  # 🏛️ Online Complaint Box
+  #  🏛️ Online Complaint Box
 
   **A modern, secure, and user-friendly platform for public complaint management.**
   
