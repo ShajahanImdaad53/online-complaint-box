@@ -3,6 +3,7 @@ import { verifyToken } from "@/app/lib/jwt";
 import { NextResponse } from "next/server";
 import StatusLog from "@/models/StatusLog";
 import Complaint from "@/models/Complaint";
+import User from "@/models/User";
 
 export async function PATCH(req, {params}){
 
@@ -10,7 +11,7 @@ try {
     await connectDB();
 
     //verify admin
-    const token = req.cookies.get("token").value;
+    const token = req.cookies.get("token")?.value;
 
     if(!token){
         return NextResponse.json(
