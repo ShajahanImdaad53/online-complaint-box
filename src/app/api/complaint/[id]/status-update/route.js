@@ -45,7 +45,7 @@ try {
     }
 
     //find complaint by id
-    const complaint = await Complaint.findById(complaintId);
+    const complaint = await Complaint.findById(complaintId).populate("user");
     if (!complaint) {
       return NextResponse.json(
         { message: "Complaint not found" },
